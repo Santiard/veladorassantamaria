@@ -78,7 +78,8 @@
                 <span>OFERTAS</span>
             </a>
 
-            <!-- Enlace Nosotros -->
+            <!-- Enlaces de Navegación -->
+            <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="header-nav-link">Catálogo</a>
             <a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>" class="header-nav-link">Nosotros</a>
 
             <!-- Icono Mi Cuenta / Perfil -->
@@ -133,9 +134,9 @@
     <nav class="drawer-menu-nav">
         <ul class="drawer-nav-list">
             <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="active">Inicio</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>">Catálogo de Productos</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#lineas-productos' ) ); ?>">Líneas de Productos</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/#ofertas' ) ); ?>" class="highlight-link">Promociones y Ofertas</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/#distribuidores' ) ); ?>">Venta al Mayoreo / Distribuidores</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/catalogo/?cat=velones' ) ); ?>" class="highlight-link">Promociones y Ofertas</a></li>
             <li><a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>">Conoce Nuestra Historia</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#contacto' ) ); ?>">Contacto & Pedidos</a></li>
         </ul>

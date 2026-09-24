@@ -75,4 +75,57 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+
+    // 4. Filtrado Interactivo del Catálogo de Productos
+    const filterButtons = document.querySelectorAll('.catalog-filter-btn');
+    const productCards = document.querySelectorAll('.product-card-minimal');
+    const emptyNotice = document.getElementById('catalogEmptyNotice');
+    const resetFiltersBtn = document.getElementById('btnResetFilters');
+
+    function applyFilter(category) {
+        let visibleCount = 0;
+        productCards.forEach(function (card) {
+            const cardCat = card.getAttribute('data-category');
+            if (category === 'todos' || cardCat === category) {
+                card.style.display = 'flex';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (emptyNotice) {
+            emptyNotice.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+
+        filterButtons.forEach(function (btn) {
+            if (btn.getAttribute('data-filter') === category) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+    }
+
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                const targetFilter = this.getAttribute('data-filter');
+                applyFilter(targetFilter);
+            });
+        });
+
+        // Revisar si la URL contiene parámetro (?cat=velones)
+        const urlParams = new URLSearchParams(window.location.search);
+        const catParam = urlParams.get('cat');
+        if (catParam) {
+            applyFilter(catParam);
+        }
+
+        if (resetFiltersBtn) {
+            resetFiltersBtn.addEventListener('click', function () {
+                applyFilter('todos');
+            });
+        }
+    }
 });

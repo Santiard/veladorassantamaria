@@ -1620,3 +1620,267 @@ button {
     text-align: center;
   }
 }
+
+
+/* =============================================================================
+   7. CATÁLOGO DE PRODUCTOS MINIMALISTA (Estilo San Jorge)
+   ============================================================================= */
+.catalog-main-page {
+  background-color: #ffffff;
+  padding: 3rem 0 5rem;
+}
+
+.catalog-page-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.catalog-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.catalog-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Filtros por Categoría */
+.catalog-filters-nav {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-filters-scroll {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.catalog-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f8fafc;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+}
+
+.catalog-filter-btn:hover {
+  background-color: #f1f5f9;
+  color: var(--color-blue);
+  border-color: #cbd5e1;
+}
+
+.catalog-filter-btn.active {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  border-color: var(--color-blue);
+  box-shadow: 0 4px 14px rgba(1, 22, 137, 0.25);
+}
+
+/* Cuadrícula de 4 Columnas Minimalista */
+.catalog-products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem 2rem;
+}
+
+.product-card-minimal {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card-minimal:hover {
+  transform: translateY(-4px);
+}
+
+.product-img-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.product-thumb-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card-minimal:hover .product-thumb-img {
+  transform: scale(1.06);
+}
+
+.product-badge-pill {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: var(--color-yellow);
+  color: var(--color-blue);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.product-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.product-card-cat {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.product-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  min-height: 2.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card-title a {
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.product-card-title a:hover {
+  color: var(--color-blue);
+}
+
+.product-card-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.product-card-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0b1338;
+  letter-spacing: -0.01em;
+}
+
+.btn-product-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: var(--color-blue);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.btn-product-order:hover {
+  background-color: var(--color-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(1, 22, 137, 0.25);
+}
+
+.catalog-empty-notice {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #64748b;
+  font-size: 1.05rem;
+}
+
+.catalog-empty-notice button {
+  margin-top: 1.25rem;
+}
+
+/* Responsividad para Catálogo */
+@media (max-width: 1024px) {
+  .catalog-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+
+  .catalog-filter-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.82rem;
+  }
+
+  .product-card-title {
+    font-size: 0.88rem;
+  }
+
+  .product-card-price {
+    font-size: 1.02rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.75rem;
+  }
+
+  .product-card-minimal {
+    padding: 0.35rem;
+  }
+
+  .product-card-price-row {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+  }
+}

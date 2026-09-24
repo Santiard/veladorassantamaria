@@ -12,8 +12,6 @@ get_header();
 global $vsm_img_hero_banner,
        $vsm_img_historia_origen,
        $vsm_img_video_miniatura,
-       $vsm_img_banner_distribuidor,
-       $vsm_img_banner_tienda_online,
        $vsm_img_banner_citronela;
 ?>
 
@@ -51,7 +49,7 @@ global $vsm_img_hero_banner,
                         Velas, <strong>velones artesanales</strong>, cirios, vasos devocionales y todo lo que necesitas para encender tu fe con la mayor duración.
                     </p>
                     <div class="hero-cta-group">
-                        <a href="#lineas-productos" class="btn-primary hero-btn">
+                        <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="btn-primary hero-btn">
                             <span>Compra aquí</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -104,77 +102,7 @@ global $vsm_img_hero_banner,
 
 
     <!-- =======================================================================
-         4. BANNERS COMERCIALES: DISTRIBUIDOR (B2B) & TIENDA ONLINE
-         ======================================================================= -->
-    <section class="commercial-banners-section" id="distribuidores" aria-label="Venta a Distribuidores y Tienda Online">
-        <div class="container-vsm">
-
-            <!-- Banner 1: ¿Quieres ser distribuidor? -->
-            <div class="distributor-cta-banner mb-6">
-                <div class="distributor-left">
-                    <div class="distributor-box-img">
-                        <?php echo vsm_render_image( 
-                            $vsm_img_banner_distribuidor, 
-                            180, 
-                            140, 
-                            'Caja Mayorista Veladoras Santa María', 
-                            'b2b-box-img', 
-                            'Foto: Caja Mayorista' 
-                        ); ?>
-                    </div>
-                    <div class="distributor-text">
-                        <h3>¿Quieres ser distribuidor de nuestros productos?</h3>
-                        <p>Precios preferenciales por caja y pallet cerrado. Cobertura a todo el país.</p>
-                    </div>
-                </div>
-                <div class="distributor-right">
-                    <a href="https://wa.me/573000000000?text=Hola,%20deseo%20informaci%C3%B3n%20para%20ser%20distribuidor" target="_blank" rel="noopener" class="btn-distribuidor">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                        <span>Clic aquí</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Banner 2: Compra en línea con Laptop/Móvil Mockup -->
-            <div class="online-store-banner">
-                <div class="online-store-visual">
-                    <?php echo vsm_render_image( 
-                        $vsm_img_banner_tienda_online, 
-                        500, 
-                        300, 
-                        'Tienda Online Veladoras Santa María', 
-                        'laptop-mockup-img', 
-                        'Foto: Laptop y Celular con Tienda' 
-                    ); ?>
-                </div>
-                <div class="online-store-content">
-                    <div class="tag-badge-yellow">
-                        <span>PAGO SEGURO Y ENVÍO RÁPIDO</span>
-                    </div>
-                    <h2>COMPRA NUESTROS PRODUCTOS EN LÍNEA</h2>
-                    <p>Accede a nuestro catálogo completo de veladoras, cirios y aromas desde la comodidad de tu hogar.</p>
-                    <a href="#lineas-productos" class="btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span>Visitar tienda</span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =======================================================================
-         5. NUESTRAS LÍNEAS DE PRODUCTOS (Barra Azul & Grid de 8 Categorías)
+         4. NUESTRAS LÍNEAS DE PRODUCTOS (Barra Azul & Grid de 8 Categorías)
          ======================================================================= -->
     <section class="product-lines-section" id="lineas-productos" aria-label="Nuestras Líneas de Productos">
         
@@ -216,7 +144,7 @@ global $vsm_img_hero_banner,
 
 
     <!-- =======================================================================
-         6. BANNER DESTACADO: VELÓN DE CITRONELA SANTA MARÍA
+         5. BANNER DESTACADO: VELÓN DE CITRONELA SANTA MARÍA
          ======================================================================= -->
     <section class="featured-promo-section" aria-label="Producto Destacado Citronela">
         <div class="container-vsm">

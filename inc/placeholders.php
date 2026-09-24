@@ -53,62 +53,193 @@ function vsm_get_product_lines() {
             'nombre'      => 'Velones',
             'descripcion' => 'Larga duración y flama constante',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#velones'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=velones') : 'preview-catalogo.html?cat=velones' )
         ),
         array(
             'id'          => 'velas',
             'nombre'      => 'Velas Tradicionales',
             'descripcion' => 'Paquetes de vela blanca y colores',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#velas'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=velas') : 'preview-catalogo.html?cat=velas' )
         ),
         array(
             'id'          => 'devocionales',
             'nombre'      => 'Veladoras de Vaso',
             'descripcion' => 'Devocionales con estampas sagradas',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#devocionales'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=devocionales') : 'preview-catalogo.html?cat=devocionales' )
         ),
         array(
             'id'          => 'cirios',
             'nombre'      => 'Cirios Pascuales',
             'descripcion' => 'Cirios solemnes y ceremoniales',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#cirios'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=cirios') : 'preview-catalogo.html?cat=cirios' )
         ),
         array(
             'id'          => 'aromas',
             'nombre'      => 'Aromas & Esencias',
             'descripcion' => 'Velas aromáticas relajantes',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#aromas'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=aromas') : 'preview-catalogo.html?cat=aromas' )
         ),
         array(
             'id'          => 'encendedores',
             'nombre'      => 'Encendedores & Fósforos',
             'descripcion' => 'Accesorios de encendido seguro',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#encendedores'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=accesorios') : 'preview-catalogo.html?cat=accesorios' )
         ),
         array(
             'id'          => 'inciensos',
             'nombre'      => 'Inciensos & Sahumerios',
             'descripcion' => 'Armonización y ambientación',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#inciensos'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=inciensos') : 'preview-catalogo.html?cat=inciensos' )
         ),
         array(
             'id'          => 'citronela',
             'nombre'      => 'Citronela & Repelentes',
             'descripcion' => 'Protección natural para exteriores',
             'imagen'      => 'assets/img/vela.webp',
-            'enlace'      => '#citronela'
+            'enlace'      => ( function_exists('home_url') ? home_url('/catalogo/?cat=citronela') : 'preview-catalogo.html?cat=citronela' )
         ),
     );
 }
 
 // =============================================================================
-// 3. FUNCIÓN DE RENDERIZADO CON FALLBACK SVG INTELIGENTE
+
+
+// =============================================================================
+// 3. PRODUCTOS DEL CATÁLOGO (Colección para page-catalogo.php)
+// =============================================================================
+
+function vsm_get_catalog_products() {
+    return array(
+        array(
+            'id'               => 1,
+            'nombre'           => 'Velón envase de vidrio – Virgen del Carmen',
+            'categoria_slug'   => 'devocionales',
+            'categoria_nombre' => 'DEVOCIONALES',
+            'precio'           => 9480,
+            'precio_formato'   => '$ 9.480',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => 'Más Vendido'
+        ),
+        array(
+            'id'               => 2,
+            'nombre'           => 'Encendedor Eléctrico Recargable para velones',
+            'categoria_slug'   => 'accesorios',
+            'categoria_nombre' => 'ACCESORIOS',
+            'precio'           => 13800,
+            'precio_formato'   => '$ 13.800',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => ''
+        ),
+        array(
+            'id'               => 3,
+            'nombre'           => 'Velón envase de vidrio – Virgen Milagrosa',
+            'categoria_slug'   => 'devocionales',
+            'categoria_nombre' => 'DEVOCIONALES',
+            'precio'           => 9480,
+            'precio_formato'   => '$ 9.480',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => ''
+        ),
+        array(
+            'id'               => 4,
+            'nombre'           => 'Velón envase de vidrio – Señor de los Milagros',
+            'categoria_slug'   => 'devocionales',
+            'categoria_nombre' => 'DEVOCIONALES',
+            'precio'           => 9480,
+            'precio_formato'   => '$ 9.480',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => ''
+        ),
+        array(
+            'id'               => 5,
+            'nombre'           => 'Velón #22 Blanco – Cera pura para decoraciones',
+            'categoria_slug'   => 'velones',
+            'categoria_nombre' => 'VELONES',
+            'precio'           => 31900,
+            'precio_formato'   => '$ 31.900',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => 'Larga Duración'
+        ),
+        array(
+            'id'               => 6,
+            'nombre'           => 'Velón Santa María #15 Amarillo Tradicional',
+            'categoria_slug'   => 'velones',
+            'categoria_nombre' => 'VELONES',
+            'precio'           => 15200,
+            'precio_formato'   => '$ 15.200',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => ''
+        ),
+        array(
+            'id'               => 7,
+            'nombre'           => 'Velón #18 Blanco con etiqueta decorativa',
+            'categoria_slug'   => 'velones',
+            'categoria_nombre' => 'VELONES',
+            'precio'           => 18500,
+            'precio_formato'   => '$ 18.500',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => ''
+        ),
+        array(
+            'id'               => 8,
+            'nombre'           => '12 Velones Pequeños Blancos – 2.8 cm de diámetro',
+            'categoria_slug'   => 'velones',
+            'categoria_nombre' => 'VELONES',
+            'precio'           => 7450,
+            'precio_formato'   => '$ 7.450',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => 'Paquete x 12'
+        ),
+        array(
+            'id'               => 9,
+            'nombre'           => 'Cirio Pascual Litúrgico Ceremonial 50 cm',
+            'categoria_slug'   => 'cirios',
+            'categoria_nombre' => 'CIRIOS PASCUALES',
+            'precio'           => 48000,
+            'precio_formato'   => '$ 48.000',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => 'Artesanal'
+        ),
+        array(
+            'id'               => 10,
+            'nombre'           => 'Velas Blancas Tradicionales – Paquete x 20 unidades',
+            'categoria_slug'   => 'velas',
+            'categoria_nombre' => 'VELAS TRADICIONALES',
+            'precio'           => 11500,
+            'precio_formato'   => '$ 11.500',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => 'Hogar y Templo'
+        ),
+        array(
+            'id'               => 11,
+            'nombre'           => 'Vela Aromática en Vaso – Lavanda y Flor de Azahar',
+            'categoria_slug'   => 'aromas',
+            'categoria_nombre' => 'AROMAS & ESENCIAS',
+            'precio'           => 14900,
+            'precio_formato'   => '$ 14.900',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => 'Relajante'
+        ),
+        array(
+            'id'               => 12,
+            'nombre'           => 'Velón de Citronela Especial Exterior con Tapa',
+            'categoria_slug'   => 'citronela',
+            'categoria_nombre' => 'CITRONELA',
+            'precio'           => 16500,
+            'precio_formato'   => '$ 16.500',
+            'imagen'           => 'assets/img/vela.webp',
+            'etiqueta'         => 'Repelente'
+        ),
+    );
+}
+
+// 4. FUNCIÓN DE RENDERIZADO CON FALLBACK SVG INTELIGENTE
 // =============================================================================
 
 /**

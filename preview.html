@@ -72,6 +72,7 @@
                 </svg>
                 <span>OFERTAS</span>
             </a>
+            <a href="preview-catalogo.html" class="header-nav-link">Catálogo</a>
             <a href="preview-nosotros.html" class="header-nav-link">Nosotros</a>
             <a href="#mi-cuenta" class="header-icon-btn" aria-label="Mi Cuenta">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -119,9 +120,9 @@
     <nav class="drawer-menu-nav">
         <ul class="drawer-nav-list">
             <li><a href="preview.html" class="active">Inicio</a></li>
+            <li><a href="preview-catalogo.html">Catálogo de Productos</a></li>
             <li><a href="preview.html#lineas-productos">Líneas de Productos</a></li>
-            <li><a href="preview.html#ofertas" class="highlight-link">Promociones y Ofertas</a></li>
-            <li><a href="preview.html#distribuidores">Venta al Mayoreo / Distribuidores</a></li>
+            <li><a href="preview-catalogo.html?cat=velones" class="highlight-link">Promociones y Ofertas</a></li>
             <li><a href="preview-nosotros.html">Conoce Nuestra Historia</a></li>
             <li><a href="preview.html#contacto">Contacto & Pedidos</a></li>
         </ul>
@@ -155,7 +156,7 @@
                         Velas, <strong>velones artesanales</strong>, cirios, vasos devocionales y todo lo que necesitas para encender tu fe con la mayor duración.
                     </p>
                     <div class="hero-cta-group">
-                        <a href="#lineas-productos" class="btn-primary hero-btn">
+                        <a href="preview-catalogo.html" class="btn-primary hero-btn">
                             <span>Compra aquí</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -199,68 +200,11 @@
         </div>
     </section>
 
-    <!-- 4. BANNERS COMERCIALES -->
-    <section class="commercial-banners-section" id="distribuidores">
-        <div class="container-vsm">
-            <div class="distributor-cta-banner mb-6">
-                <div class="distributor-left">
-                    <div class="distributor-box-img">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" style="background:#ffffff; border-radius:8px;">
-                            <rect x="25" y="20" width="90" height="60" rx="4" fill="#e2e8f0" />
-                            <text x="70" y="55" text-anchor="middle" fill="#011689" font-family="system-ui" font-size="11" font-weight="700">Caja Mayorista</text>
-                        </svg>
-                    </div>
-                    <div class="distributor-text">
-                        <h3>¿Quieres ser distribuidor de nuestros productos?</h3>
-                        <p>Precios preferenciales por caja y pallet cerrado. Cobertura a todo el país.</p>
-                    </div>
-                </div>
-                <div class="distributor-right">
-                    <a href="#" class="btn-distribuidor">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                        <span>Clic aquí</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="online-store-banner">
-                <div class="online-store-visual">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 260" style="background:#023e8a; border-radius:12px; width:100%;">
-                        <rect x="75" y="40" width="300" height="170" rx="8" fill="#ffffff" opacity="0.9" />
-                        <rect x="90" y="55" width="270" height="135" rx="4" fill="#eff3ff" />
-                        <text x="225" y="130" text-anchor="middle" fill="#011689" font-family="system-ui" font-weight="700" font-size="14">Laptop & Celular Mockup</text>
-                        <text x="225" y="155" text-anchor="middle" fill="#64748b" font-family="system-ui" font-size="11">$vsm_img_banner_tienda_online</text>
-                    </svg>
-                </div>
-                <div class="online-store-content">
-                    <div class="tag-badge-yellow">
-                        <span>PAGO SEGURO Y ENVÍO RÁPIDO</span>
-                    </div>
-                    <h2>COMPRA NUESTROS PRODUCTOS EN LÍNEA</h2>
-                    <p>Accede a nuestro catálogo completo de veladoras, cirios y aromas desde la comodidad de tu hogar.</p>
-                    <a href="#lineas-productos" class="btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span>Visitar tienda</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. NUESTRAS LÍNEAS DE PRODUCTOS -->
+    <!-- 4. NUESTRAS LÍNEAS DE PRODUCTOS -->
     <section class="product-lines-section" id="lineas-productos">
         <div class="section-title-navy-bar">
             <div class="container-vsm">
-                <h2 class="title-navy-text">Nuestras líneas de productos</h2>
+                <h2 class="title-navy-text">Nuestras Velas</h2>
             </div>
         </div>
 
@@ -269,7 +213,7 @@
                 
                 <!-- 1. Velones -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=velones" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Velones" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -281,7 +225,7 @@
 
                 <!-- 2. Velas -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=velas" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Velas Tradicionales" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -293,7 +237,7 @@
 
                 <!-- 3. Veladoras de Vaso -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=devocionales" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Veladoras de Vaso" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -305,7 +249,7 @@
 
                 <!-- 4. Cirios Pascuales -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=cirios" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Cirios Pascuales" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -317,7 +261,7 @@
 
                 <!-- 5. Aromas -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=aromas" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Aromas & Esencias" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -329,7 +273,7 @@
 
                 <!-- 6. Encendedores -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=accesorios" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Encendedores & Fósforos" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -341,7 +285,7 @@
 
                 <!-- 7. Inciensos -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=inciensos" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Inciensos & Sahumerios" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -353,7 +297,7 @@
 
                 <!-- 8. Citronela -->
                 <article class="category-card-vsm">
-                    <a href="#" class="category-card-link">
+                    <a href="preview-catalogo.html?cat=citronela" class="category-card-link">
                         <div class="category-img-container">
                             <img src="assets/img/vela.webp" alt="Citronela & Repelentes" class="cat-img-element" width="350" height="350" loading="lazy">
                         </div>
@@ -367,7 +311,7 @@
         </div>
     </section>
 
-    <!-- 6. BANNER DESTACADO CITRONELA -->
+    <!-- 5. BANNER DESTACADO CITRONELA -->
     <section class="featured-promo-section">
         <div class="container-vsm">
             <div class="citronela-promo-card">
@@ -453,12 +397,12 @@
             <div class="footer-col">
                 <h3 class="footer-title">Líneas de Productos</h3>
                 <ul class="footer-links-list">
-                    <li><a href="#velones">Velones Tradicionales</a></li>
-                    <li><a href="#velas">Velas Blancas y de Colores</a></li>
-                    <li><a href="#devocionales">Veladoras de Vaso Devocionales</a></li>
-                    <li><a href="#cirios">Cirios Pascuales</a></li>
-                    <li><a href="#aromas">Velas Aromáticas y Esencias</a></li>
-                    <li><a href="#citronela">Línea Citronela Exterior</a></li>
+                    <li><a href="preview-catalogo.html?cat=velones">Velones Tradicionales</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas">Velas Blancas y de Colores</a></li>
+                    <li><a href="preview-catalogo.html?cat=devocionales">Veladoras de Vaso Devocionales</a></li>
+                    <li><a href="preview-catalogo.html?cat=cirios">Cirios Pascuales</a></li>
+                    <li><a href="preview-catalogo.html?cat=aromas">Velas Aromáticas y Esencias</a></li>
+                    <li><a href="preview-catalogo.html?cat=citronela">Línea Citronela Exterior</a></li>
                 </ul>
             </div>
 
