@@ -1,0 +1,23 @@
+# Sistema Operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+*.swp
+*~
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs y temporales
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Paquetes y dependencias (si se usan a futuro)
+node_modules/
+vendor/
