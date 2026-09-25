@@ -1,0 +1,12 @@
+Carpeta para los videos de Reels de Instagram.
+
+Instrucciones para los archivos:
+1. Formato recomendado: MP4 (H.264 / AAC) en resolución vertical (1080x1920 o 720x1280).
+2. Nombres sugeridos:
+   - reel-1.mp4
+   - reel-2.mp4
+   - reel-3.mp4
+   - reel-4.mp4
+   - reel-5.mp4
+
+Al colocarlos con estos nombres, el carrusel los cargará automáticamente.

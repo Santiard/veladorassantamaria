@@ -143,62 +143,202 @@ global $vsm_img_hero_banner,
     </section>
 
 
-    <!-- =======================================================================
-         5. BANNER DESTACADO: VELÓN DE CITRONELA SANTA MARÍA
-         ======================================================================= -->
-    <section class="featured-promo-section" aria-label="Producto Destacado Citronela">
-        <div class="container-vsm">
-            <div class="citronela-promo-card">
-                
-                <div class="citronela-visual-col">
-                    <?php echo vsm_render_image( 
-                        $vsm_img_banner_citronela, 
-                        300, 
-                        250, 
-                        'Velón de Citronela Santa María', 
-                        'citronela-img', 
-                        'Foto: Velón de Citronela' 
-                    ); ?>
-                </div>
 
-                <div class="citronela-info-col">
-                    <span class="citronela-tag">Especial Exterior</span>
-                    <h2 class="citronela-title">Velón de citronela Santa María</h2>
-                    <p class="citronela-subtitle">Ideal para fincas, terrazas, jardines y restaurantes</p>
-                    
-                    <div class="citronela-badges">
-                        <span class="badge-item">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                            </svg>
-                            <span>Ayuda a repeler insectos</span>
-                        </span>
-                        <span class="badge-item">
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>100% Cera sin humo tóxico</span>
-                        </span>
+    <!-- =======================================================================
+         6. CARRUSEL HORIZONTAL DE REELS / VIDEOS DE INSTAGRAM
+         ======================================================================= -->
+    <section class="reels-showcase-section" id="reels-instagram" aria-label="Videos de Instagram">
+        <div class="container-vsm">
+            <div class="reels-section-header">
+                <h2 class="reels-section-title">Nuestra Tradición en Movimiento</h2>
+                <p class="reels-section-subtitle">Descubre el proceso artesanal, el encendido y la calidad de nuestros velones en acción.</p>
+            </div>
+
+            <!-- Contenedor del Carrusel Interactivo -->
+            <div class="reels-carousel-container" id="reelsCarousel">
+                <!-- Flechas de navegación lateral -->
+                <button type="button" class="reel-nav-btn reel-prev-btn" id="reelPrevBtn" aria-label="Ver video anterior">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button type="button" class="reel-nav-btn reel-next-btn" id="reelNextBtn" aria-label="Ver siguiente video">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Visor y Riel Deslizante -->
+                <div class="reels-viewport" id="reelsViewport">
+                    <div class="reels-track" id="reelsTrack">
+                        
+                        <!-- Reel 1 -->
+                        <div class="reel-card is-active" data-index="0">
+                            <div class="reel-card-inner">
+                                <div class="reel-progress-bar"><div class="reel-progress-fill"></div></div>
+                                <video class="reel-video" src="<?php echo esc_url( get_theme_file_uri( 'assets/videos/reel-1.mp4' ) ); ?>" playsinline preload="metadata" muted></video>
+                                <button type="button" class="reel-sound-toggle" aria-label="Activar o desactivar sonido">
+                                    <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                                    </svg>
+                                    <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    </svg>
+                                </button>
+                                <div class="reel-center-play-indicator" aria-hidden="true">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="reel-card-overlay">
+                                    <h3 class="reel-caption-title">Proceso de Fabricación Artesanal</h3>
+                                    <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" class="reel-caption-link">
+                                        <span>Ver en Instagram</span> &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reel 2 -->
+                        <div class="reel-card is-next" data-index="1">
+                            <div class="reel-card-inner">
+                                <div class="reel-progress-bar"><div class="reel-progress-fill"></div></div>
+                                <video class="reel-video" src="<?php echo esc_url( get_theme_file_uri( 'assets/videos/reel-2.mp4' ) ); ?>" playsinline preload="metadata" muted></video>
+                                <button type="button" class="reel-sound-toggle" aria-label="Activar o desactivar sonido">
+                                    <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                                    </svg>
+                                    <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    </svg>
+                                </button>
+                                <div class="reel-center-play-indicator" aria-hidden="true">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="reel-card-overlay">
+                                    <h3 class="reel-caption-title">Pureza y Calidad de Parafina</h3>
+                                    <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" class="reel-caption-link">
+                                        <span>Ver en Instagram</span> &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reel 3 -->
+                        <div class="reel-card is-far-next" data-index="2">
+                            <div class="reel-card-inner">
+                                <div class="reel-progress-bar"><div class="reel-progress-fill"></div></div>
+                                <video class="reel-video" src="<?php echo esc_url( get_theme_file_uri( 'assets/videos/reel-3.mp4' ) ); ?>" playsinline preload="metadata" muted></video>
+                                <button type="button" class="reel-sound-toggle" aria-label="Activar o desactivar sonido">
+                                    <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                                    </svg>
+                                    <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    </svg>
+                                </button>
+                                <div class="reel-center-play-indicator" aria-hidden="true">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="reel-card-overlay">
+                                    <h3 class="reel-caption-title">Encendiendo la Devoción</h3>
+                                    <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" class="reel-caption-link">
+                                        <span>Ver en Instagram</span> &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reel 4 -->
+                        <div class="reel-card is-far-prev" data-index="3">
+                            <div class="reel-card-inner">
+                                <div class="reel-progress-bar"><div class="reel-progress-fill"></div></div>
+                                <video class="reel-video" src="<?php echo esc_url( get_theme_file_uri( 'assets/videos/reel-4.mp4' ) ); ?>" playsinline preload="metadata" muted></video>
+                                <button type="button" class="reel-sound-toggle" aria-label="Activar o desactivar sonido">
+                                    <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                                    </svg>
+                                    <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    </svg>
+                                </button>
+                                <div class="reel-center-play-indicator" aria-hidden="true">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="reel-card-overlay">
+                                    <h3 class="reel-caption-title">30 Años Iluminando Tradiciones</h3>
+                                    <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" class="reel-caption-link">
+                                        <span>Ver en Instagram</span> &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reel 5 -->
+                        <div class="reel-card is-prev" data-index="4">
+                            <div class="reel-card-inner">
+                                <div class="reel-progress-bar"><div class="reel-progress-fill"></div></div>
+                                <video class="reel-video" src="<?php echo esc_url( get_theme_file_uri( 'assets/videos/reel-5.mp4' ) ); ?>" playsinline preload="metadata" muted></video>
+                                <button type="button" class="reel-sound-toggle" aria-label="Activar o desactivar sonido">
+                                    <svg class="icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                                    </svg>
+                                    <svg class="icon-unmuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                    </svg>
+                                </button>
+                                <div class="reel-center-play-indicator" aria-hidden="true">
+                                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="reel-card-overlay">
+                                    <h3 class="reel-caption-title">Flama Continua y Durabilidad</h3>
+                                    <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" class="reel-caption-link">
+                                        <span>Ver en Instagram</span> &rarr;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="citronela-action-col">
-                    <a href="#contacto" class="btn-primary btn-large shadow-glow">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="cart-icon">
-                            <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span>Comprar</span>
-                    </a>
+                <!-- Indicadores de puntos -->
+                <div class="reels-indicators" id="reelsIndicators">
+                    <button type="button" class="reel-dot is-active" data-slide="0" aria-label="Ir al video 1"></button>
+                    <button type="button" class="reel-dot" data-slide="1" aria-label="Ir al video 2"></button>
+                    <button type="button" class="reel-dot" data-slide="2" aria-label="Ir al video 3"></button>
+                    <button type="button" class="reel-dot" data-slide="3" aria-label="Ir al video 4"></button>
+                    <button type="button" class="reel-dot" data-slide="4" aria-label="Ir al video 5"></button>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- =======================================================================
-         6. UBICACION Y SEDES (Google Maps Cúcuta & Sedes de Atención)
+         7. UBICACION Y SEDES (Google Maps Cúcuta & Sedes de Atención)
          ======================================================================= -->
     <section class="store-location-section" id="ubicacion" aria-label="Ubicacion y Sedes">
         <div class="container-vsm">

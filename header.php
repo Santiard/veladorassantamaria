@@ -58,20 +58,8 @@
             </nav>
         </div>
 
-        <!-- Grupo Derecho: Ofertas y Lupa de Búsqueda -->
+        <!-- Grupo Derecho: Lupa de Búsqueda -->
         <div class="header-actions-col">
-            <!-- Botón Destacado de Ofertas -->
-            <a href="<?php echo esc_url( home_url( '/catalogo/?cat=velones' ) ); ?>" class="btn-ofertas-badge">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
-                    <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                    <rect x="2" y="7" width="20" height="5"></rect>
-                    <line x1="12" y1="22" x2="12" y2="7"></line>
-                    <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                    <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                </svg>
-                <span>OFERTAS</span>
-            </a>
-
             <!-- Botón Lupa Buscador -->
             <button type="button" class="header-icon-btn header-search-trigger" id="headerSearchToggleBtn" aria-label="Abrir buscador de productos" title="Buscar productos">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velón envase de vidrio – Virgen del Carmen – Veladoras Santa María</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- Barra de Anuncio Superior -->
+<div class="top-announcement-bar">
+    <div class="container-vsm">
+        <span>Envíos a nivel nacional &bull; Precios especiales para distribuidores y parroquias</span>
+    </div>
+</div>
+
+<!-- Cabecera Principal -->
+<header class="site-header-vsm" id="siteHeader">
+    <div class="container-vsm header-inner">
+        
+        <!-- Grupo Izquierdo: Botón Menú + Logotipo + Navegación -->
+        <div class="header-left-col">
+            <button type="button" class="btn-menu-toggle" id="menuToggleBtn" aria-label="Abrir Menú de Navegación" aria-expanded="false">
+                <span class="hamburger-icon" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-btn-label">Menú</span>
+            </button>
+
+            <div class="header-logo-col">
+                <a href="preview.html" class="brand-logo" rel="home">
+                    <img src="assets/img/logopequeño.webp" alt="Velas y Velones Santa María" class="brand-logo-img" width="46" height="46">
+                    <span class="logo-text-group">
+                        <span class="logo-title">Santa María</span>
+                        <span class="logo-subtitle">Velas y Velones</span>
+                    </span>
+                </a>
+            </div>
+
+            <nav class="header-main-nav" aria-label="Navegación principal">
+                <a href="preview-catalogo.html" class="header-nav-link" style="color: var(--color-blue); font-weight: 800;">Catálogo</a>
+                <a href="preview-nosotros.html" class="header-nav-link">Nosotros</a>
+            </nav>
+        </div>
+
+        <!-- Grupo Derecho: Lupa de Búsqueda -->
+        <div class="header-actions-col">
+            <button type="button" class="header-icon-btn header-search-trigger" id="headerSearchToggleBtn" aria-label="Abrir buscador de productos" title="Buscar productos">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Desplegable de Búsqueda Rápida del Header -->
+    <div class="header-search-dropdown" id="headerSearchDropdown" style="display: none;">
+        <div class="container-vsm">
+            <form class="header-dropdown-search-form" id="headerDropdownForm" action="preview-catalogo.html" method="get">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-search-icon">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="search" name="s" id="headerDropdownInput" class="header-dropdown-input" placeholder="¿Qué velón, cirio o vela estás buscando?" autocomplete="off" />
+                <button type="submit" class="btn-primary header-dropdown-btn">Buscar</button>
+                <button type="button" class="header-dropdown-close" id="headerDropdownClose" aria-label="Cerrar buscador">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</header>
+
+<!-- Menú Lateral Móvil -->
+<div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+<aside class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-header">
+        <div class="drawer-brand">
+            <img src="assets/img/logopequeño.webp" alt="Velas y Velones Santa María" class="drawer-logo-img" width="38" height="38">
+            <div class="drawer-brand-text">
+                <span class="logo-title">Santa María</span>
+                <span class="logo-subtitle">Velas y Velones</span>
+            </div>
+        </div>
+        <button type="button" class="btn-drawer-close" id="drawerCloseBtn" aria-label="Cerrar Menú">&times;</button>
+    </div>
+    <div class="drawer-search">
+        <form role="search" method="get" class="search-form-vsm" action="preview-catalogo.html">
+            <input type="search" name="s" class="search-input-vsm" placeholder="¿Qué producto buscas?" />
+            <button type="submit" class="search-submit-vsm" aria-label="Buscar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </form>
+    </div>
+    <nav class="drawer-menu-nav">
+        <ul class="drawer-nav-list">
+            <li><a href="preview.html">Inicio</a></li>
+            <li><a href="preview-catalogo.html" class="active">Catálogo de Productos</a></li>
+            <li><a href="preview.html#lineas-productos">Líneas de Productos</a></li>
+            <li><a href="preview-nosotros.html">Conoce Nuestra Historia</a></li>
+            <li><a href="preview.html#contacto">Contacto & Pedidos</a></li>
+        </ul>
+    </nav>
+    <div class="drawer-footer">
+        <a href="https://wa.me/573144753682" target="_blank" rel="noopener" class="btn-primary w-full">
+            <span>Cotizar por WhatsApp</span>
+        </a>
+    </div>
+</aside>
+
+<!-- Contenido Principal: Ficha de Detalle de Producto -->
+<main id="primary" class="site-main product-detail-page">
+    <div class="container-vsm" id="productDetailPage">
+
+        <!-- Migas de Pan (Breadcrumbs) -->
+        <nav class="breadcrumb-nav" aria-label="Ruta de navegación">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="preview.html">Inicio</a></li>
+                <li class="breadcrumb-separator">/</li>
+                <li class="breadcrumb-item"><a href="preview-catalogo.html">Catálogo</a></li>
+                <li class="breadcrumb-separator">/</li>
+                <li class="breadcrumb-item"><a href="preview-catalogo.html" id="prodDetailBreadcrumbCat">DEVOCIONALES</a></li>
+                <li class="breadcrumb-separator">/</li>
+                <li class="breadcrumb-item breadcrumb-current" id="prodDetailBreadcrumbCurrent" aria-current="page">Velón envase de vidrio – Virgen del Carmen</li>
+            </ol>
+        </nav>
+
+        <!-- Escaparate Principal de 2 Columnas -->
+        <div class="product-detail-layout">
+            
+            <!-- Columna Izquierda: Galería e Imagen del Producto -->
+            <div class="product-detail-visual">
+                <div class="product-detail-img-container">
+                    <span class="product-detail-badge" id="prodDetailBadge">Más Vendido</span>
+                    <img src="assets/img/vela.webp" 
+                         alt="Velón envase de vidrio – Virgen del Carmen" 
+                         id="prodDetailMainImg" 
+                         class="product-detail-main-img" 
+                         width="480" 
+                         height="480">
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Información Técnica y Botones de Pedido -->
+            <div class="product-detail-info">
+                
+                <div class="product-detail-meta-top">
+                    <span class="product-detail-cat-tag" id="prodDetailCatTag">DEVOCIONALES</span>
+                    <span class="product-detail-sku-tag" id="prodDetailSkuTag">Ref: DEV-VC-001</span>
+                </div>
+
+                <h1 class="product-detail-heading" id="prodDetailHeading">Velón envase de vidrio – Virgen del Carmen</h1>
+
+                <!-- Bloque de Precio -->
+                <div class="product-detail-price-box">
+                    <span class="product-detail-price-val" id="prodDetailPriceVal">$ 9.480</span>
+                    <span class="product-detail-price-curr">COP</span>
+                    <span class="product-unit-price-label">Precio por unidad</span>
+                </div>
+
+                <!-- Descripción del Producto -->
+                <p class="product-detail-desc" id="prodDetailDesc">
+                    Producto elaborado con materiales de alta calidad y tradición cerera Santa María. Ideal para el hogar, templos y momentos de oración o ambientación.
+                </p>
+
+                <!-- Botón Principal de Pedido -->
+                <div class="product-detail-actions">
+                    <a href="https://wa.me/573144753682?text=Hola%20Veladoras%20Santa%20Mar%C3%ADa%2C%20deseo%20pedir%20el%20producto%3A%20Vel%C3%B3n%20envase%20de%20vidrio%20%E2%80%93%20Virgen%20del%20Carmen%20(%24%209.480).%20%C2%BFTienen%20disponibilidad%20y%20env%C3%ADos%3F" 
+                       id="prodDetailWhatsappBtn" 
+                       class="btn-detail-whatsapp" 
+                       target="_blank" 
+                       rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.01 4.54-3.68 8.23-8.22 8.23zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.18-.47-.3z"/>
+                        </svg>
+                        <span>Pedir por WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Tira de Confianza de Fábrica -->
+                <div class="product-trust-strip">
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                        <span>Venta directa de fábrica</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                        <span>Envíos a todo el país</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>Asesoría personalizada</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Sección de Productos Relacionados -->
+        <section class="related-products-section" aria-label="Productos recomendados">
+            <div class="related-products-header">
+                <h2 class="related-products-title">También te puede interesar</h2>
+                <p class="related-products-subtitle">Descubre otros velones y complementos litúrgicos de nuestra fabricación tradicional.</p>
+            </div>
+
+            <div class="catalog-products-grid">
+                <!-- Relacionado 1 -->
+                <article class="product-card-minimal" data-category="devocionales">
+                    <div class="product-img-box">
+                        <span class="product-badge-pill">Devoción</span>
+                        <a href="preview-producto.html?id=3" class="product-img-link" aria-label="Ver detalles de Velón Virgen Milagrosa">
+                            <img src="assets/img/vela.webp" alt="Velón envase de vidrio – Virgen Milagrosa" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        </a>
+                        <div class="product-img-overlay">
+                            <a href="preview-producto.html?id=3" class="btn-ver-detalles" aria-label="Ver detalles de Velón Virgen Milagrosa">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span>Ver detalles</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card-body">
+                        <span class="product-card-cat">DEVOCIONALES</span>
+                        <h3 class="product-card-title">
+                            <a href="preview-producto.html?id=3">Velón envase de vidrio – Virgen Milagrosa</a>
+                        </h3>
+                        <div class="product-card-price-row">
+                            <span class="product-card-price">$ 9.480</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%20Virgen%20Milagrosa" target="_blank" rel="noopener" class="btn-product-order">
+                                <span>Pedir</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Relacionado 2 -->
+                <article class="product-card-minimal" data-category="devocionales">
+                    <div class="product-img-box">
+                        <span class="product-badge-pill">Fe & Tradición</span>
+                        <a href="preview-producto.html?id=4" class="product-img-link" aria-label="Ver detalles de Velón Señor de los Milagros">
+                            <img src="assets/img/vela.webp" alt="Velón envase de vidrio – Señor de los Milagros" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        </a>
+                        <div class="product-img-overlay">
+                            <a href="preview-producto.html?id=4" class="btn-ver-detalles" aria-label="Ver detalles de Velón Señor de los Milagros">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span>Ver detalles</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card-body">
+                        <span class="product-card-cat">DEVOCIONALES</span>
+                        <h3 class="product-card-title">
+                            <a href="preview-producto.html?id=4">Velón envase de vidrio – Señor de los Milagros</a>
+                        </h3>
+                        <div class="product-card-price-row">
+                            <span class="product-card-price">$ 9.480</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%20Se%C3%B1or%20de%20los%20Milagros" target="_blank" rel="noopener" class="btn-product-order">
+                                <span>Pedir</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Relacionado 3 -->
+                <article class="product-card-minimal" data-category="velones">
+                    <div class="product-img-box">
+                        <span class="product-badge-pill">Larga Duración</span>
+                        <a href="preview-producto.html?id=5" class="product-img-link" aria-label="Ver detalles de Velón 22 Blanco">
+                            <img src="assets/img/vela.webp" alt="Velón #22 Blanco – Cera pura para decoraciones" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        </a>
+                        <div class="product-img-overlay">
+                            <a href="preview-producto.html?id=5" class="btn-ver-detalles" aria-label="Ver detalles de Velón 22 Blanco">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span>Ver detalles</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card-body">
+                        <span class="product-card-cat">VELONES</span>
+                        <h3 class="product-card-title">
+                            <a href="preview-producto.html?id=5">Velón #22 Blanco – Cera pura para decoraciones</a>
+                        </h3>
+                        <div class="product-card-price-row">
+                            <span class="product-card-price">$ 31.900</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%2022%20Blanco" target="_blank" rel="noopener" class="btn-product-order">
+                                <span>Pedir</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Relacionado 4 -->
+                <article class="product-card-minimal" data-category="accesorios">
+                    <div class="product-img-box">
+                        <span class="product-badge-pill">Práctico</span>
+                        <a href="preview-producto.html?id=2" class="product-img-link" aria-label="Ver detalles de Encendedor Eléctrico Recargable">
+                            <img src="assets/img/vela.webp" alt="Encendedor Eléctrico Recargable para velones" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        </a>
+                        <div class="product-img-overlay">
+                            <a href="preview-producto.html?id=2" class="btn-ver-detalles" aria-label="Ver detalles de Encendedor Eléctrico Recargable">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span>Ver detalles</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card-body">
+                        <span class="product-card-cat">ACCESORIOS</span>
+                        <h3 class="product-card-title">
+                            <a href="preview-producto.html?id=2">Encendedor Eléctrico Recargable para velones</a>
+                        </h3>
+                        <div class="product-card-price-row">
+                            <span class="product-card-price">$ 13.800</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Encendedor%20El%C3%A9ctrico%20Recargable" target="_blank" rel="noopener" class="btn-product-order">
+                                <span>Pedir</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<!-- Pie de Página Oficial -->
+<footer class="site-footer-vsm">
+    <div class="container-vsm">
+        <div class="footer-main-row">
+            
+            <div class="footer-col footer-col-brand">
+                <a href="preview.html" class="footer-brand-link">
+                    <img src="assets/img/logopequeño.webp" alt="Velas y Velones Santa María" class="footer-logo-img" width="56" height="56">
+                    <span class="footer-brand-title">Santa María</span>
+                    <span class="footer-brand-subtitle">Velas y Velones</span>
+                </a>
+                <p class="footer-brand-desc">
+                    Tradición, devoción y la más alta calidad artesanal en cerería desde Norte de Santander para todo el territorio colombiano.
+                </p>
+                <div class="footer-direct-factory-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Venta directa de fábrica sin intermediarios</span>
+                </div>
+                
+                <div class="footer-social-wrap">
+                    <span class="footer-social-label">Síguenos en redes</span>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram de Veladoras Santa María" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook de Veladoras Santa María" title="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Líneas de Productos</h3>
+                <ul class="footer-links-list">
+                    <li><a href="preview-catalogo.html?cat=velones">Velones Tradicionales</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas">Velas Blancas y de Colores</a></li>
+                    <li><a href="preview-catalogo.html?cat=devocionales">Veladoras de Vaso Devocionales</a></li>
+                    <li><a href="preview-catalogo.html?cat=cirios">Cirios Pascuales</a></li>
+                    <li><a href="preview-catalogo.html?cat=aromas">Velas Aromáticas y Esencias</a></li>
+                    <li><a href="preview-catalogo.html?cat=citronela">Línea Citronela Exterior</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Enlaces Útiles</h3>
+                <ul class="footer-links-list">
+                    <li><a href="preview-catalogo.html">Catálogo Completo</a></li>
+                    <li><a href="preview-nosotros.html">Nuestra Historia</a></li>
+                    <li><a href="preview.html#contacto">Venta Mayorista (Distribuidores)</a></li>
+                    <li><a href="preview-catalogo.html">Catálogo de Ofertas</a></li>
+                    <li><a href="#politicas">Políticas de Envío y Devolución</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 class="footer-title">Atención al Cliente</h3>
+                <p class="footer-contact-item">
+                    <strong>Sede Cúcuta (Principal):</strong><br>
+                    <a href="https://maps.app.goo.gl/WEqPBmxZDsdk9gb5A" target="_blank" rel="noopener">Av. 11 #14-45, Cúcuta</a><br>
+                    <a href="tel:+573144753682" class="footer-phone-link">+57 (314) 475-3682</a>
+                </p>
+                <p class="footer-contact-item">
+                    <strong>Sede Los Patios:</strong><br>
+                    <a href="https://maps.google.com/?q=Calle+37+%237+-+80,+Los+Patios,+Norte+de+Santander" target="_blank" rel="noopener">Calle 37 #7 - 80, Los Patios</a><br>
+                    <a href="tel:+573134616819" class="footer-phone-link">+57 (313) 461-6819</a>
+                </p>
+                <p class="footer-contact-item">
+                    <strong>Teléfono / Pedidos:</strong><br>
+                    <a href="tel:+573144753682" class="footer-phone-link">+57 (314) 475-3682</a>
+                </p>
+                <p class="footer-contact-item">
+                    <strong>Correo Electrónico:</strong><br>
+                    <a href="mailto:contacto@veladorassantamaria.com">contacto@veladorassantamaria.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 <strong>Veladoras Santa María</strong>. Todos los derechos reservados.</p>
+            <div class="footer-social-mini">
+                <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" aria-label="Instagram @velasyvelonessantamaria">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/" target="_blank" rel="noopener" aria-label="Facebook Veladoras Santa María">
+                    <svg width="18" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
+            <p class="footer-legal-links">
+                <a href="#privacidad">Aviso de Privacidad</a> &bull; 
+                <a href="#terminos">Términos y Condiciones</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

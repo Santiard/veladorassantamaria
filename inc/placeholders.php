@@ -30,6 +30,9 @@ $vsm_address_lospatios = 'Calle 37 #7 - 80, Los Patios, Norte de Santander';
 $vsm_maps_url_cucuta   = 'https://maps.app.goo.gl/WEqPBmxZDsdk9gb5A';
 $vsm_maps_url_lospatios= 'https://maps.google.com/?q=Calle+37+%237+-+80,+Los+Patios,+Norte+de+Santander';
 
+$vsm_social_instagram  = 'https://www.instagram.com/velasyvelonessantamaria/';
+$vsm_social_facebook   = 'https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/';
+
 // Logotipos y Favicon Oficiales
 $vsm_img_favicon              = 'assets/img/favicon.ico';
 $vsm_img_logo_pequeno         = 'assets/img/logopequeño.webp';
@@ -127,6 +130,8 @@ function vsm_get_product_lines() {
 // =============================================================================
 
 function vsm_get_catalog_products() {
+    $desc_estandar = 'Producto elaborado con materiales de alta calidad y tradición cerera Santa María. Ideal para el hogar, templos y momentos de oración o ambientación.';
+
     return array(
         array(
             'id'               => 1,
@@ -136,7 +141,9 @@ function vsm_get_catalog_products() {
             'precio'           => 9480,
             'precio_formato'   => '$ 9.480',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => 'Más Vendido'
+            'etiqueta'         => 'Más Vendido',
+            'sku'              => 'DEV-VC-001',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 2,
@@ -146,7 +153,9 @@ function vsm_get_catalog_products() {
             'precio'           => 13800,
             'precio_formato'   => '$ 13.800',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => ''
+            'etiqueta'         => 'Práctico & Seguro',
+            'sku'              => 'ACC-ENC-002',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 3,
@@ -156,7 +165,9 @@ function vsm_get_catalog_products() {
             'precio'           => 9480,
             'precio_formato'   => '$ 9.480',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => ''
+            'etiqueta'         => 'Devoción',
+            'sku'              => 'DEV-VM-003',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 4,
@@ -166,7 +177,9 @@ function vsm_get_catalog_products() {
             'precio'           => 9480,
             'precio_formato'   => '$ 9.480',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => ''
+            'etiqueta'         => 'Fe & Tradición',
+            'sku'              => 'DEV-SM-004',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 5,
@@ -176,7 +189,9 @@ function vsm_get_catalog_products() {
             'precio'           => 31900,
             'precio_formato'   => '$ 31.900',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => 'Larga Duración'
+            'etiqueta'         => 'Larga Duración',
+            'sku'              => 'VEL-B22-005',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 6,
@@ -186,7 +201,9 @@ function vsm_get_catalog_products() {
             'precio'           => 15200,
             'precio_formato'   => '$ 15.200',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => ''
+            'etiqueta'         => 'Clásico',
+            'sku'              => 'VEL-A15-006',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 7,
@@ -196,7 +213,9 @@ function vsm_get_catalog_products() {
             'precio'           => 18500,
             'precio_formato'   => '$ 18.500',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => ''
+            'etiqueta'         => 'Especial',
+            'sku'              => 'VEL-B18-007',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 8,
@@ -206,7 +225,9 @@ function vsm_get_catalog_products() {
             'precio'           => 7450,
             'precio_formato'   => '$ 7.450',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => 'Paquete x 12'
+            'etiqueta'         => 'Paquete x 12',
+            'sku'              => 'VEL-PX12-008',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 9,
@@ -216,7 +237,9 @@ function vsm_get_catalog_products() {
             'precio'           => 48000,
             'precio_formato'   => '$ 48.000',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => 'Artesanal'
+            'etiqueta'         => 'Artesanal',
+            'sku'              => 'CIR-PAS-009',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 10,
@@ -226,7 +249,9 @@ function vsm_get_catalog_products() {
             'precio'           => 11500,
             'precio_formato'   => '$ 11.500',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => 'Hogar y Templo'
+            'etiqueta'         => 'Hogar y Templo',
+            'sku'              => 'VELA-TRAD-010',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 11,
@@ -236,7 +261,9 @@ function vsm_get_catalog_products() {
             'precio'           => 14900,
             'precio_formato'   => '$ 14.900',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => 'Relajante'
+            'etiqueta'         => 'Relajante',
+            'sku'              => 'ARO-LAV-011',
+            'descripcion'      => $desc_estandar
         ),
         array(
             'id'               => 12,
@@ -246,10 +273,30 @@ function vsm_get_catalog_products() {
             'precio'           => 16500,
             'precio_formato'   => '$ 16.500',
             'imagen'           => 'assets/img/vela.webp',
-            'etiqueta'         => 'Repelente'
+            'etiqueta'         => 'Repelente',
+            'sku'              => 'CIT-EXT-012',
+            'descripcion'      => $desc_estandar
         ),
     );
 }
+
+/**
+ * Obtener un producto por su ID
+ *
+ * @param int $id Identificador del producto
+ * @return array|null Datos del producto o null si no se encuentra
+ */
+function vsm_get_product_by_id( $id ) {
+    $productos = vsm_get_catalog_products();
+    $id = intval( $id );
+    foreach ( $productos as $p ) {
+        if ( intval( $p['id'] ) === $id ) {
+            return $p;
+        }
+    }
+    return ! empty( $productos ) ? $productos[0] : null;
+}
+
 
 // 4. FUNCIÓN DE RENDERIZADO CON FALLBACK SVG INTELIGENTE
 // =============================================================================

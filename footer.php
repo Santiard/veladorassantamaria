@@ -58,6 +58,26 @@
                         <span>Envíos a Nivel Nacional</span>
                     </span>
                 </div>
+                
+                <div class="footer-social-wrap">
+                    <span class="footer-social-label">Síguenos en redes</span>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Instagram de Veladoras Santa María" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="Facebook de Veladoras Santa María" title="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Columna 2: Líneas de Productos -->
@@ -113,6 +133,20 @@
         <!-- Barra Inferior de Derechos Reservados -->
         <div class="footer-bottom-bar">
             <p>&copy; <?php echo date( 'Y' ); ?> <strong>Veladoras Santa María</strong>. Todos los derechos reservados.</p>
+            <div class="footer-social-mini">
+                <a href="https://www.instagram.com/velasyvelonessantamaria/" target="_blank" rel="noopener" aria-label="Instagram @velasyvelonessantamaria">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/" target="_blank" rel="noopener" aria-label="Facebook Veladoras Santa María">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+            </div>
             <p class="footer-legal-links">
                 <a href="#privacidad">Aviso de Privacidad</a> &bull; 
                 <a href="#terminos">Términos y Condiciones</a>

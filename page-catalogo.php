@@ -75,7 +75,9 @@ $productos = vsm_get_catalog_products();
         <!-- Cuadrícula Minimalista de Productos (4 Columnas) -->
         <div class="catalog-grid-wrapper">
             <div class="catalog-products-grid" id="catalogProductsGrid">
-                <?php foreach ( $productos as $item ) : ?>
+                <?php foreach ( $productos as $item ) : 
+                    $detalle_url = home_url( '/producto/?id=' . $item['id'] );
+                ?>
                     <article class="product-card-minimal" data-category="<?php echo esc_attr( $item['categoria_slug'] ); ?>" id="prod-<?php echo esc_attr( $item['id'] ); ?>">
                         
                         <div class="product-img-box">
@@ -83,19 +85,32 @@ $productos = vsm_get_catalog_products();
                                 <span class="product-badge-pill"><?php echo esc_html( $item['etiqueta'] ); ?></span>
                             <?php endif; ?>
                             
-                            <img src="<?php echo esc_url( get_theme_file_uri( $item['imagen'] ) ); ?>" 
-                                 alt="<?php echo esc_attr( $item['nombre'] ); ?>" 
-                                 class="product-thumb-img" 
-                                 width="300" 
-                                 height="300" 
-                                 loading="lazy">
+                            <a href="<?php echo esc_url( $detalle_url ); ?>" class="product-img-link" aria-label="<?php echo esc_attr( 'Ver detalles de ' . $item['nombre'] ); ?>">
+                                <img src="<?php echo esc_url( get_theme_file_uri( $item['imagen'] ) ); ?>" 
+                                     alt="<?php echo esc_attr( $item['nombre'] ); ?>" 
+                                     class="product-thumb-img" 
+                                     width="300" 
+                                     height="300" 
+                                     loading="lazy">
+                            </a>
+
+                            <!-- Capa Hover con botón Ver detalles -->
+                            <div class="product-img-overlay">
+                                <a href="<?php echo esc_url( $detalle_url ); ?>" class="btn-ver-detalles" aria-label="<?php echo esc_attr( 'Ver detalles de ' . $item['nombre'] ); ?>">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    <span>Ver detalles</span>
+                                </a>
+                            </div>
                         </div>
 
                         <div class="product-card-body">
                             <span class="product-card-cat"><?php echo esc_html( $item['categoria_nombre'] ); ?></span>
                             
                             <h2 class="product-card-title">
-                                <a href="https://wa.me/573144753682?text=<?php echo rawurlencode( 'Hola, me interesa información y pedido de: ' . $item['nombre'] ); ?>" target="_blank" rel="noopener">
+                                <a href="<?php echo esc_url( $detalle_url ); ?>">
                                     <?php echo esc_html( $item['nombre'] ); ?>
                                 </a>
                             </h2>
@@ -117,6 +132,22 @@ $productos = vsm_get_catalog_products();
 
                     </article>
                 <?php endforeach; ?>
+            </div>
+
+            <!-- Controles de Carga Progresiva del Catálogo -->
+            <div class="catalog-load-more-wrapper" id="catalogLoadMoreWrapper">
+                <p class="catalog-counter-text">
+                    Mostrando <strong id="catalogCountShown">8</strong> de <strong id="catalogCountTotal"><?php echo count( $productos ); ?></strong> productos
+                </p>
+                <div class="catalog-progress-bar-container">
+                    <div class="catalog-progress-bar" id="catalogProgressBar" style="width: 66%;"></div>
+                </div>
+                <button type="button" id="btnLoadMoreProducts" class="btn-load-more">
+                    <span>Cargar más productos</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
             </div>
             
             <!-- Mensaje cuando un filtro no tenga productos -->

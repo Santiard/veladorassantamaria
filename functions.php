@@ -61,3 +61,17 @@ function veladoras_setup() {
     ) );
 }
 add_action( 'after_setup_theme', 'veladoras_setup' );
+
+/**
+ * Soporte de plantilla directa para detalle de producto
+ */
+function vsm_product_template_include( $template ) {
+    if ( isset( $_GET['id'] ) && ( isset( $_SERVER['REQUEST_URI'] ) && strpos( $_SERVER['REQUEST_URI'], '/producto' ) !== false ) ) {
+        $custom_template = get_template_directory() . '/page-producto-detalle.php';
+        if ( file_exists( $custom_template ) ) {
+            return $custom_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'template_include', 'vsm_product_template_include' );
