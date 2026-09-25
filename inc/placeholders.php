@@ -18,6 +18,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 // 1. VARIABLES DE IMÁGENES GENÉRICAS (Rutas relativas dentro de assets/img/)
 // =============================================================================
 
+// Datos Oficiales de Contacto
+$vsm_phone_raw         = '573144753682';
+$vsm_phone_display     = '+57 (314) 475-3682';
+$vsm_phone_cucuta_raw  = '573144753682';
+$vsm_phone_cucuta      = '+57 (314) 475-3682';
+$vsm_phone_patios_raw  = '573134616819';
+$vsm_phone_patios      = '+57 (313) 461-6819';
+$vsm_address_cucuta    = 'Av. 11 #14-45, Cúcuta, Norte de Santander';
+$vsm_address_lospatios = 'Calle 37 #7 - 80, Los Patios, Norte de Santander';
+$vsm_maps_url_cucuta   = 'https://maps.app.goo.gl/WEqPBmxZDsdk9gb5A';
+$vsm_maps_url_lospatios= 'https://maps.google.com/?q=Calle+37+%237+-+80,+Los+Patios,+Norte+de+Santander';
+
 // Logotipos y Favicon Oficiales
 $vsm_img_favicon              = 'assets/img/favicon.ico';
 $vsm_img_logo_pequeno         = 'assets/img/logopequeño.webp';

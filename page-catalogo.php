@@ -18,6 +18,30 @@ $productos = vsm_get_catalog_products();
             <p class="catalog-subtitle">Venta directa de fábrica para hogares, templos y distribuidores mayoristas con envíos a todo el país.</p>
         </header>
 
+        <!-- Buscador Exclusivo del Catálogo -->
+        <div class="catalog-search-wrapper">
+            <div class="catalog-search-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="catalog-search-icon">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input 
+                    type="search" 
+                    id="catalogSearchInput" 
+                    class="catalog-search-input" 
+                    placeholder="Buscar velón, cirio, devocional, aroma o accesorio..." 
+                    autocomplete="off"
+                    aria-label="Buscar en el catálogo"
+                />
+                <button type="button" id="catalogSearchClearBtn" class="catalog-search-clear-btn" aria-label="Borrar búsqueda" style="display: none;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
         <!-- Barra de Filtros por Categoría -->
         <nav class="catalog-filters-nav" aria-label="Filtrar por categoría">
             <div class="catalog-filters-scroll">
@@ -71,14 +95,14 @@ $productos = vsm_get_catalog_products();
                             <span class="product-card-cat"><?php echo esc_html( $item['categoria_nombre'] ); ?></span>
                             
                             <h2 class="product-card-title">
-                                <a href="https://wa.me/573000000000?text=<?php echo rawurlencode( 'Hola, me interesa información y pedido de: ' . $item['nombre'] ); ?>" target="_blank" rel="noopener">
+                                <a href="https://wa.me/573144753682?text=<?php echo rawurlencode( 'Hola, me interesa información y pedido de: ' . $item['nombre'] ); ?>" target="_blank" rel="noopener">
                                     <?php echo esc_html( $item['nombre'] ); ?>
                                 </a>
                             </h2>
 
                             <div class="product-card-price-row">
                                 <span class="product-card-price"><?php echo esc_html( $item['precio_formato'] ); ?></span>
-                                <a href="https://wa.me/573000000000?text=<?php echo rawurlencode( 'Hola, deseo cotizar y pedir: ' . $item['nombre'] . ' (' . $item['precio_formato'] . ')' ); ?>" 
+                                <a href="https://wa.me/573144753682?text=<?php echo rawurlencode( 'Hola, deseo cotizar y pedir: ' . $item['nombre'] . ' (' . $item['precio_formato'] . ')' ); ?>" 
                                    target="_blank" 
                                    rel="noopener" 
                                    class="btn-product-order" 

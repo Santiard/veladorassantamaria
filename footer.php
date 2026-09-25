@@ -9,7 +9,7 @@
      =========================================================================== -->
 
 <!-- Botón Flotante de WhatsApp (Izquierda) -->
-<a href="https://wa.me/573000000000?text=Hola,%20quisiera%20asesor%C3%ADa%20sobre%20las%20Veladoras%20Santa%20Mar%C3%ADa" 
+<a href="https://wa.me/573144753682?text=Hola,%20quisiera%20asesor%C3%ADa%20sobre%20las%20Veladoras%20Santa%20Mar%C3%ADa" 
    class="vsm-floating-whatsapp" 
    target="_blank" 
    rel="noopener" 
@@ -89,12 +89,18 @@
             <div class="footer-col">
                 <h3 class="footer-title">Atención al Cliente</h3>
                 <p class="footer-contact-item">
-                    <strong>Fábrica y Despachos:</strong><br>
-                    Distribución a nivel nacional
+                    <strong>Sede Cúcuta (Principal):</strong><br>
+                    <a href="https://maps.app.goo.gl/WEqPBmxZDsdk9gb5A" target="_blank" rel="noopener">Av. 11 #14-45, Cúcuta</a><br>
+                    <a href="tel:+573144753682" class="footer-phone-link">+57 (314) 475-3682</a>
+                </p>
+                <p class="footer-contact-item">
+                    <strong>Sede Los Patios:</strong><br>
+                    <a href="https://maps.google.com/?q=Calle+37+%237+-+80,+Los+Patios,+Norte+de+Santander" target="_blank" rel="noopener">Calle 37 #7 - 80, Los Patios</a><br>
+                    <a href="tel:+573134616819" class="footer-phone-link">+57 (313) 461-6819</a>
                 </p>
                 <p class="footer-contact-item">
                     <strong>Teléfono / Pedidos:</strong><br>
-                    <a href="tel:+573000000000" class="footer-phone-link">+57 (300) 000-0000</a>
+                    <a href="tel:+573144753682" class="footer-phone-link">+57 (314) 475-3682</a>
                 </p>
                 <p class="footer-contact-item">
                     <strong>Correo Electrónico:</strong><br>

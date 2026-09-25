@@ -28,19 +28,9 @@
 <header class="site-header-vsm" id="siteHeader">
     <div class="container-vsm header-inner">
         
-        <!-- 1. Logotipo Corporativo Oficial -->
-        <div class="header-logo-col">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo" rel="home">
-                <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/logopequeño.webp' ) ); ?>" alt="Velas y Velones Santa María" class="brand-logo-img" width="46" height="46">
-                <span class="logo-text-group">
-                    <span class="logo-title">Santa María</span>
-                    <span class="logo-subtitle">Velas y Velones</span>
-                </span>
-            </a>
-        </div>
-
-        <!-- 2. Botón de Menú Móvil / Desplegable -->
-        <div class="header-menu-btn-col">
+        <!-- Grupo Izquierdo: Botón Menú + Logotipo + Navegación -->
+        <div class="header-left-col">
+            <!-- Botón de Menú (A la izquierda) -->
             <button type="button" class="btn-menu-toggle" id="menuToggleBtn" aria-label="Abrir Menú de Navegación" aria-expanded="false">
                 <span class="hamburger-icon" aria-hidden="true">
                     <span></span>
@@ -49,25 +39,29 @@
                 </span>
                 <span class="menu-btn-label">Menú</span>
             </button>
+
+            <!-- Logotipo Corporativo Oficial -->
+            <div class="header-logo-col">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-logo" rel="home">
+                    <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/logopequeño.webp' ) ); ?>" alt="Velas y Velones Santa María" class="brand-logo-img" width="46" height="46">
+                    <span class="logo-text-group">
+                        <span class="logo-title">Santa María</span>
+                        <span class="logo-subtitle">Velas y Velones</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Enlaces de Navegación a la Izquierda -->
+            <nav class="header-main-nav" aria-label="Navegación principal">
+                <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="header-nav-link">Catálogo</a>
+                <a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>" class="header-nav-link">Nosotros</a>
+            </nav>
         </div>
 
-        <!-- 3. Barra de Búsqueda de Productos -->
-        <div class="header-search-col">
-            <form role="search" method="get" class="search-form-vsm" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <input type="search" class="search-input-vsm" placeholder="¿Qué producto estás buscando?" value="<?php echo get_search_query(); ?>" name="s" aria-label="Buscar productos" />
-                <button type="submit" class="search-submit-vsm" aria-label="Buscar">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-            </form>
-        </div>
-
-        <!-- 4. Acciones Rápidas (Ofertas, Nosotros, Perfil, Carrito) -->
+        <!-- Grupo Derecho: Ofertas y Lupa de Búsqueda -->
         <div class="header-actions-col">
-            <!-- Botón Destacado de Ofertas (con icono SVG limpio de etiqueta) -->
-            <a href="#ofertas" class="btn-ofertas-badge">
+            <!-- Botón Destacado de Ofertas -->
+            <a href="<?php echo esc_url( home_url( '/catalogo/?cat=velones' ) ); ?>" class="btn-ofertas-badge">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
                     <polyline points="20 12 20 22 4 22 4 12"></polyline>
                     <rect x="2" y="7" width="20" height="5"></rect>
@@ -78,29 +72,35 @@
                 <span>OFERTAS</span>
             </a>
 
-            <!-- Enlaces de Navegación -->
-            <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="header-nav-link">Catálogo</a>
-            <a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>" class="header-nav-link">Nosotros</a>
-
-            <!-- Icono Mi Cuenta / Perfil -->
-            <a href="#mi-cuenta" class="header-icon-btn" aria-label="Mi Cuenta">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
+            <!-- Botón Lupa Buscador -->
+            <button type="button" class="header-icon-btn header-search-trigger" id="headerSearchToggleBtn" aria-label="Abrir buscador de productos" title="Buscar productos">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-            </a>
-
-            <!-- Icono Carrito con Contador Dinámico -->
-            <a href="#carrito" class="header-icon-btn cart-btn" aria-label="Carrito de Compras">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-                <span class="cart-counter-badge" id="cartCountBadge">1</span>
-            </a>
+            </button>
         </div>
 
+    </div>
+
+    <!-- Desplegable de Búsqueda Rápida del Header -->
+    <div class="header-search-dropdown" id="headerSearchDropdown" style="display: none;">
+        <div class="container-vsm">
+            <form class="header-dropdown-search-form" id="headerDropdownForm" action="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" method="get">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="dropdown-search-icon">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="search" name="s" id="headerDropdownInput" class="header-dropdown-input" placeholder="¿Qué velón, cirio o vela estás buscando?" autocomplete="off" />
+                <button type="submit" class="btn-primary header-dropdown-btn">Buscar</button>
+                <button type="button" class="header-dropdown-close" id="headerDropdownClose" aria-label="Cerrar buscador">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </form>
+        </div>
     </div>
 </header>
 
@@ -143,7 +143,7 @@
     </nav>
 
     <div class="drawer-footer">
-        <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="btn-primary w-full">
+        <a href="https://wa.me/573144753682" target="_blank" rel="noopener" class="btn-primary w-full">
             <span>Cotizar por WhatsApp</span>
         </a>
     </div>

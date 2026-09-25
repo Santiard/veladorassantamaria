@@ -1884,3 +1884,588 @@ button {
     align-items: center;
   }
 }
+
+
+/* =============================================================================
+   SECCION DE UBICACION Y MAPA DE GOOGLE (Horizontal 2 Columnas)
+   ============================================================================= */
+.store-location-section {
+  padding: 4.5rem 0;
+  background-color: var(--bg-body);
+}
+
+.location-card-wrapper {
+  display: grid;
+  grid-template-columns: 0.9fr 1.15fr;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.location-card-wrapper:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: #cbd5e1;
+}
+
+/* Columna Izquierda: Mapa */
+.location-map-col {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  background-color: #e2e8f0;
+}
+
+.location-iframe-map {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  border: 0;
+  display: block;
+}
+
+/* Columna Derecha: Informacion */
+.location-info-col {
+  padding: 2.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.location-tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-blue-light);
+  color: var(--color-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  width: fit-content;
+  border: 1px solid var(--color-blue-border);
+}
+
+.location-title {
+  font-family: var(--font-heading);
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+.location-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.location-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.location-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.location-item-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-yellow-tint);
+  border: 1px solid var(--color-yellow-border);
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  margin-bottom: 0.15rem;
+}
+
+.location-val {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.location-val strong,
+strong.location-val {
+  font-weight: 700;
+  color: var(--color-blue);
+}
+
+.location-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.location-maps-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.btn-outline-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: 2px solid var(--color-blue);
+  color: var(--color-blue);
+  background-color: transparent;
+  border-radius: var(--radius-full);
+  transition: var(--transition);
+}
+
+.btn-outline-navy:hover {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(1, 22, 137, 0.2);
+}
+
+/* Responsividad Seccion Ubicacion */
+@media (max-width: 991px) {
+  .location-card-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .location-map-col,
+  .location-iframe-map {
+    min-height: 340px;
+    height: 340px;
+  }
+
+  .location-info-col {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .location-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .store-location-section {
+    padding: 3rem 0;
+  }
+
+  .location-map-col,
+  .location-iframe-map {
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .location-info-col {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .location-title {
+    font-size: 1.4rem;
+  }
+
+  .location-actions-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .location-actions-group a {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+
+/* Estilos de Horario Detallado */
+.location-item-hours {
+  align-items: flex-start;
+}
+
+.location-item-hours .location-item-text {
+  width: 100%;
+}
+
+.location-schedule-box {
+  margin-top: 0.4rem;
+  background-color: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.schedule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.schedule-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.schedule-days {
+  font-weight: 700;
+  color: var(--color-blue);
+  white-space: nowrap;
+}
+
+.schedule-hours {
+  color: var(--text-main);
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.schedule-closed .schedule-hours {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+@media (max-width: 576px) {
+  .schedule-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+  .schedule-hours {
+    text-align: left;
+    font-size: 0.82rem;
+    white-space: normal;
+  }
+}
+
+
+/* =============================================================================
+   BUSCADOR EXCLUSIVO DEL CATALOGO Y LUPA EN HEADER
+   ============================================================================= */
+
+/* Boton Lupa en el Header */
+.header-search-trigger {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.header-search-trigger:hover {
+  background-color: var(--color-blue-light);
+  color: var(--color-blue-hover);
+  transform: scale(1.08);
+}
+
+/* Desplegable de busqueda rapida en Header para paginas externas al catalogo */
+.header-search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border-bottom: 2px solid var(--color-yellow);
+  box-shadow: 0 10px 25px -5px rgba(1, 22, 137, 0.15);
+  padding: 0.85rem 0;
+  z-index: 999;
+  animation: slideDownSearch 0.22s ease-out;
+}
+
+@keyframes slideDownSearch {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-dropdown-search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.dropdown-search-icon {
+  color: var(--color-blue);
+  flex-shrink: 0;
+}
+
+.header-dropdown-input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: var(--transition);
+}
+
+.header-dropdown-input:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(1, 22, 137, 0.1);
+}
+
+.header-dropdown-btn {
+  padding: 0.7rem 1.4rem;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.header-dropdown-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.header-dropdown-close:hover {
+  background-color: #f1f5f9;
+  color: var(--color-blue);
+}
+
+/* Buscador Exclusivo en la Pagina del Catalogo */
+.catalog-search-wrapper {
+  max-width: 640px;
+  margin: 0 auto 1.75rem;
+}
+
+.catalog-search-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  padding: 0.35rem 0.75rem 0.35rem 1.25rem;
+  transition: var(--transition);
+}
+
+.catalog-search-box:focus-within {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 4px rgba(1, 22, 137, 0.12);
+  transform: translateY(-1px);
+}
+
+.catalog-search-icon {
+  color: var(--color-blue);
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.catalog-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.96rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background: transparent;
+  padding: 0.5rem 0;
+}
+
+.catalog-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.catalog-search-clear-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.catalog-search-clear-btn:hover {
+  color: var(--color-blue);
+  background-color: #f1f5f9;
+}
+
+
+/* Alineacion del menu del header a la izquierda */
+.header-left-col {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .header-main-nav {
+    display: none;
+  }
+  .header-left-col {
+    gap: 0.65rem;
+  }
+}
+
+
+/* Pestañas de selector de Sede sobre el Mapa */
+.location-map-tabs {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(1, 22, 137, 0.12);
+}
+
+.map-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.map-tab-btn:hover {
+  color: var(--color-blue);
+  background-color: #f1f5f9;
+}
+
+.map-tab-btn.active {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(1, 22, 137, 0.3);
+}
+
+.location-branch-card {
+  padding-bottom: 0.25rem;
+}
+
+
+/* Estilos de lineas telefonicas en fichas de sede */
+.location-phone-line {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  display: block;
+}
+
+.location-phone-link {
+  color: var(--color-blue);
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.location-phone-link:hover {
+  color: var(--color-blue-hover);
+  text-decoration: underline;
+}
+
+
+/* Ajustes de expansion horizontal de la tarjeta de ubicacion */
+.store-location-section .container-vsm {
+  max-width: 1440px;
+  width: 95%;
+}
+
+.location-card-wrapper {
+  grid-template-columns: 1fr 1.2fr !important;
+}
+
+.location-info-col {
+  padding: 2.75rem 2.75rem !important;
+}
+
+.location-branches-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  background-color: #f8fafc;
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.location-branches-grid .location-item {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .location-branches-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .location-info-col {
+    padding: 1.75rem 1.25rem !important;
+  }
+}
