@@ -18,134 +18,71 @@ global $vsm_img_hero_banner,
 <main id="primary" class="site-main">
 
     <!-- =======================================================================
-         1. HERO BANNER PRINCIPAL (Inspirado en Banner de Temporada)
+         1. BANNER HORIZONTAL ROTATIVO (ANCHO COMPLETO - FULL WIDTH)
          ======================================================================= -->
-    <section class="hero-banner-section" aria-label="Banner Principal de Temporada">
-        <div class="container-vsm">
-            <div class="hero-banner-card">
-                
-                <!-- Columna Izquierda: Gráfico / Set de Veladoras en Caja -->
-                <div class="hero-visual-col">
-                    <div class="hero-image-wrapper">
-                        <?php echo vsm_render_image( 
-                            $vsm_img_hero_banner, 
-                            650, 
-                            420, 
-                            'Set de Veladoras y Velones Santa María', 
-                            'hero-banner-img', 
-                            'Foto Grande: Set de Veladoras en Caja' 
-                        ); ?>
-                    </div>
+    <section class="hero-slider-section" aria-label="Banners Principales">
+        <div class="hero-slider-container" id="heroBannerSlider">
+            
+            <div class="hero-slider-track" id="heroSliderTrack">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="hero-slide-link" aria-label="Catálogo Veladoras Santa María">
+                        <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/vela.webp' ) ); ?>" alt="Veladoras Santa María" class="hero-slide-img">
+                    </a>
                 </div>
 
-                <!-- Columna Derecha: Título de Impacto & Botón de Compra -->
-                <div class="hero-content-col">
-                    <span class="hero-eyebrow">Edición Especial</span>
-                    <h1 class="hero-title">
-                        TEMPORADA<br>
-                        <span class="highlight-flame">DEVOCIONAL</span>
-                    </h1>
-                    <p class="hero-description">
-                        Velas, <strong>velones artesanales</strong>, cirios, vasos devocionales y todo lo que necesitas para encender tu fe con la mayor duración.
-                    </p>
-                    <div class="hero-cta-group">
-                        <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="btn-primary hero-btn">
-                            <span>Compra aquí</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    </div>
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>" class="hero-slide-link" aria-label="Fábrica de Velas y Velones Santa María">
+                        <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/empresa.webp' ) ); ?>" alt="Fábrica de Velas y Velones Santa María" class="hero-slide-img">
+                    </a>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =======================================================================
-         2. CINTILLO INSTITUCIONAL DE PROPUESTA DE VALOR
-         ======================================================================= -->
-    <section class="brand-value-strip" aria-label="Mensaje Institucional">
-        <div class="container-vsm">
-            <p class="value-statement">
-                Somos una empresa que trabaja con devoción y calidad para iluminar los hogares, templos y tradiciones de nuestras familias
-            </p>
-        </div>
-    </section>
-
-
-    <!-- =======================================================================
-         3. ENLACE INSTITUCIONAL RÁPIDO A NOSOTROS
-         ======================================================================= -->
-    <section class="home-nosotros-teaser-section" aria-label="Enlace a Nuestra Historia">
-        <div class="container-vsm">
-            <div class="home-teaser-card">
-                <div class="home-teaser-text">
-                    <span class="teaser-tag">Nuestra Tradición</span>
-                    <h2 class="teaser-title">Más de 30 años de experiencia e iluminación artesanal</h2>
-                    <p class="teaser-desc">Fabricamos velas y velones con mecha de algodón puro y parafina de máxima pureza para asegurar una combustión limpia y duradera.</p>
-                </div>
-                <div class="home-teaser-action">
-                    <a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>" class="btn-secondary">
-                        <span>Conoce nuestra historia</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <a href="<?php echo esc_url( home_url( '/catalogo/?cat=veladoras' ) ); ?>" class="hero-slide-link" aria-label="Línea de Veladoras Santa María">
+                        <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/vela.webp' ) ); ?>" alt="Línea de Veladoras Santa María" class="hero-slide-img">
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
 
+            <!-- Botones de Navegación Flechas -->
+            <button type="button" class="hero-slider-arrow hero-slider-prev" id="heroSliderPrev" aria-label="Banner anterior">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button type="button" class="hero-slider-arrow hero-slider-next" id="heroSliderNext" aria-label="Siguiente banner">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
 
-    <!-- =======================================================================
-         4. NUESTRAS LÍNEAS DE PRODUCTOS (Barra Azul & Grid de 8 Categorías)
-         ======================================================================= -->
-    <section class="product-lines-section" id="lineas-productos" aria-label="Nuestras Líneas de Productos">
-        
-        <!-- Barra Azul Marina con Título Central (Identidad San Jorge adaptada) -->
-        <div class="section-title-navy-bar">
-            <div class="container-vsm">
-                <h2 class="title-navy-text">Nuestras líneas de productos</h2>
-            </div>
-        </div>
+            <!-- Paginación con Puntos -->
+            <div class="hero-slider-dots" id="heroSliderDots" role="tablist" aria-label="Selector de banner"></div>
 
-        <!-- Grid de Categorías con Placeholders o Imágenes Reales -->
-        <div class="container-vsm py-10">
-            <div class="categories-grid-vsm">
-                <?php 
-                $categorias = vsm_get_product_lines();
-                foreach ( $categorias as $cat ) : 
-                ?>
-                    <article class="category-card-vsm" id="<?php echo esc_attr( $cat['id'] ); ?>">
-                        <a href="<?php echo esc_url( $cat['enlace'] ); ?>" class="category-card-link">
-                            <div class="category-img-container">
-                                <?php echo vsm_render_image( 
-                                    $cat['imagen'], 
-                                    350, 
-                                    350, 
-                                    $cat['nombre'], 
-                                    'cat-img-element', 
-                                    $cat['nombre'] 
-                                ); ?>
-                            </div>
-                            <h3 class="category-card-name"><?php echo esc_html( $cat['nombre'] ); ?></h3>
-                            <span class="category-card-sub"><?php echo esc_html( $cat['descripcion'] ); ?></span>
-                            <span class="category-card-btn-action">Ver línea &rarr;</span>
-                        </a>
-                    </article>
-                <?php endforeach; ?>
-            </div>
+            <!-- Atajo Rápido a Ubicación y Sedes -->
+            <a href="#ubicacion" class="hero-slider-location-btn" aria-label="Ir a Ubicación y Sedes">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Ubicación</span>
+            </a>
+
         </div>
     </section>
 
 
 
+
+
+
+
+
+
     <!-- =======================================================================
-         6. CARRUSEL HORIZONTAL DE REELS / VIDEOS DE INSTAGRAM
+         2. CARRUSEL HORIZONTAL DE REELS / VIDEOS DE INSTAGRAM
          ======================================================================= -->
     <section class="reels-showcase-section" id="reels-instagram" aria-label="Videos de Instagram">
         <div class="container-vsm">
@@ -332,6 +269,73 @@ global $vsm_img_hero_banner,
                     <button type="button" class="reel-dot" data-slide="2" aria-label="Ir al video 3"></button>
                     <button type="button" class="reel-dot" data-slide="3" aria-label="Ir al video 4"></button>
                     <button type="button" class="reel-dot" data-slide="4" aria-label="Ir al video 5"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =======================================================================
+         3. NUESTRAS VELAS (Barra Azul & Grid de 5 Categorías)
+         ======================================================================= -->
+    <section class="product-lines-section" id="lineas-productos" aria-label="Nuestras Velas">
+        
+        <!-- Barra Azul Marina con Título Central -->
+        <div class="section-title-navy-bar">
+            <div class="container-vsm">
+                <h2 class="title-navy-text">Nuestras Velas</h2>
+            </div>
+        </div>
+
+        <!-- Grid de Categorías con Placeholders o Imágenes Reales -->
+        <div class="container-vsm py-10">
+            <div class="categories-grid-vsm">
+                <?php 
+                $categorias = vsm_get_product_lines();
+                foreach ( $categorias as $cat ) : 
+                ?>
+                    <article class="category-card-vsm" id="<?php echo esc_attr( $cat['id'] ); ?>">
+                        <a href="<?php echo esc_url( $cat['enlace'] ); ?>" class="category-card-link">
+                            <div class="category-img-container">
+                                <?php echo vsm_render_image( 
+                                    $cat['imagen'], 
+                                    350, 
+                                    350, 
+                                    $cat['nombre'], 
+                                    'cat-img-element', 
+                                    $cat['nombre'] 
+                                ); ?>
+                            </div>
+                            <h3 class="category-card-name"><?php echo esc_html( $cat['nombre'] ); ?></h3>
+                            <span class="category-card-sub"><?php echo esc_html( $cat['descripcion'] ); ?></span>
+                            <span class="category-card-btn-action">Ver línea &rarr;</span>
+                        </a>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =======================================================================
+         4. ENLACE INSTITUCIONAL RÁPIDO A NOSOTROS
+         ======================================================================= -->
+    <section class="home-nosotros-teaser-section" aria-label="Enlace a Nuestra Historia">
+        <div class="container-vsm">
+            <div class="home-teaser-card">
+                <div class="home-teaser-text">
+                    <span class="teaser-tag">Nuestra Tradición</span>
+                    <h2 class="teaser-title">Más de 30 años de experiencia e iluminación artesanal</h2>
+                    <p class="teaser-desc">Fabricamos velas y velones con mecha de algodón puro y parafina de máxima pureza para asegurar una combustión limpia y duradera.</p>
+                </div>
+                <div class="home-teaser-action">
+                    <a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>" class="btn-secondary">
+                        <span>Conoce nuestra historia</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>

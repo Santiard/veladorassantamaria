@@ -49,6 +49,7 @@
 
             <!-- Enlaces de Navegación a la Izquierda -->
             <nav class="header-main-nav" aria-label="Navegación principal">
+                <a href="preview.html" class="header-nav-link active">Inicio</a>
                 <a href="preview-catalogo.html" class="header-nav-link">Catálogo</a>
                 <a href="preview-nosotros.html" class="header-nav-link">Nosotros</a>
             </nav>
@@ -117,7 +118,7 @@
             <li><a href="preview.html" class="active">Inicio</a></li>
             <li><a href="preview-catalogo.html">Catálogo de Productos</a></li>
             <li><a href="preview.html#lineas-productos">Líneas de Productos</a></li>
-            <li><a href="preview-catalogo.html?cat=velones" class="highlight-link">Promociones y Ofertas</a></li>
+            <li><a href="preview-catalogo.html?cat=veladoras" class="highlight-link">Promociones y Ofertas</a></li>
             <li><a href="preview-nosotros.html">Conoce Nuestra Historia</a></li>
             <li><a href="preview.html#contacto">Contacto & Pedidos</a></li>
         </ul>
@@ -131,183 +132,62 @@
 
 <main id="primary" class="site-main">
 
-    <!-- 1. HERO BANNER PRINCIPAL -->
-    <section class="hero-banner-section">
-        <div class="container-vsm">
-            <div class="hero-banner-card">
-                <div class="hero-visual-col">
-                    <div class="hero-image-wrapper">
-                        <img src="assets/img/vela.webp" alt="Set de Veladoras y Velones Santa María" class="hero-banner-img" width="650" height="420">
-                    </div>
+    <!-- 1. BANNER HORIZONTAL ROTATIVO (ANCHO COMPLETO - FULL WIDTH) -->
+    <section class="hero-slider-section" aria-label="Banners Principales">
+        <div class="hero-slider-container" id="heroBannerSlider">
+            
+            <div class="hero-slider-track" id="heroSliderTrack">
+                <!-- Slide 1 -->
+                <div class="hero-slide active">
+                    <a href="preview-catalogo.html" class="hero-slide-link" aria-label="Catálogo Veladoras Santa María">
+                        <img src="assets/img/vela.webp" alt="Veladoras Santa María" class="hero-slide-img">
+                    </a>
                 </div>
 
-                <div class="hero-content-col">
-                    <span class="hero-eyebrow">Edición Especial</span>
-                    <h1 class="hero-title">
-                        TEMPORADA<br>
-                        <span class="highlight-flame">DEVOCIONAL</span>
-                    </h1>
-                    <p class="hero-description">
-                        Velas, <strong>velones artesanales</strong>, cirios, vasos devocionales y todo lo que necesitas para encender tu fe con la mayor duración.
-                    </p>
-                    <div class="hero-cta-group">
-                        <a href="preview-catalogo.html" class="btn-primary hero-btn">
-                            <span>Compra aquí</span>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </a>
-                    </div>
+                <!-- Slide 2 -->
+                <div class="hero-slide">
+                    <a href="preview-nosotros.html" class="hero-slide-link" aria-label="Fábrica de Velas y Velones Santa María">
+                        <img src="assets/img/empresa.webp" alt="Fábrica de Velas y Velones Santa María" class="hero-slide-img">
+                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- 2. CINTILLO INSTITUCIONAL -->
-    <section class="brand-value-strip">
-        <div class="container-vsm">
-            <p class="value-statement">
-                Somos una empresa que trabaja con devoción y calidad para iluminar los hogares, templos y tradiciones de nuestras familias
-            </p>
-        </div>
-    </section>
-
-    <!-- 3. ENLACE INSTITUCIONAL RÁPIDO A NOSOTROS -->
-    <section class="home-nosotros-teaser-section" aria-label="Enlace a Nuestra Historia">
-        <div class="container-vsm">
-            <div class="home-teaser-card">
-                <div class="home-teaser-text">
-                    <span class="teaser-tag">Nuestra Tradición</span>
-                    <h2 class="teaser-title">Más de 30 años de experiencia e iluminación artesanal</h2>
-                    <p class="teaser-desc">Fabricamos velas y velones con mecha de algodón puro y parafina de máxima pureza para asegurar una combustión limpia y duradera.</p>
-                </div>
-                <div class="home-teaser-action">
-                    <a href="preview-nosotros.html" class="btn-secondary">
-                        <span>Conoce nuestra historia</span>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+                <!-- Slide 3 -->
+                <div class="hero-slide">
+                    <a href="preview-catalogo.html?cat=veladoras" class="hero-slide-link" aria-label="Línea de Veladoras Santa María">
+                        <img src="assets/img/vela.webp" alt="Línea de Veladoras Santa María" class="hero-slide-img">
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 4. NUESTRAS LÍNEAS DE PRODUCTOS -->
-    <section class="product-lines-section" id="lineas-productos">
-        <div class="section-title-navy-bar">
-            <div class="container-vsm">
-                <h2 class="title-navy-text">Nuestras Velas</h2>
-            </div>
-        </div>
+            <!-- Botones de Navegación Flechas -->
+            <button type="button" class="hero-slider-arrow hero-slider-prev" id="heroSliderPrev" aria-label="Banner anterior">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button type="button" class="hero-slider-arrow hero-slider-next" id="heroSliderNext" aria-label="Siguiente banner">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
 
-        <div class="container-vsm py-10">
-            <div class="categories-grid-vsm">
-                
-                <!-- 1. Velones -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=velones" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Velones" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Velones</h3>
-                        <span class="category-card-sub">Larga duración y flama constante</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
+            <!-- Paginación con Puntos -->
+            <div class="hero-slider-dots" id="heroSliderDots" role="tablist" aria-label="Selector de banner"></div>
 
-                <!-- 2. Velas -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=velas" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Velas Tradicionales" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Velas Tradicionales</h3>
-                        <span class="category-card-sub">Paquetes de vela blanca y colores</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
+            <!-- Atajo Rápido a Ubicación y Sedes -->
+            <a href="#ubicacion" class="hero-slider-location-btn" aria-label="Ir a Ubicación y Sedes">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Ubicación</span>
+            </a>
 
-                <!-- 3. Veladoras de Vaso -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=devocionales" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Veladoras de Vaso" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Veladoras de Vaso</h3>
-                        <span class="category-card-sub">Devocionales con estampas sagradas</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
-
-                <!-- 4. Cirios Pascuales -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=cirios" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Cirios Pascuales" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Cirios Pascuales</h3>
-                        <span class="category-card-sub">Cirios solemnes y ceremoniales</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
-
-                <!-- 5. Aromas -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=aromas" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Aromas & Esencias" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Aromas & Esencias</h3>
-                        <span class="category-card-sub">Velas aromáticas relajantes</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
-
-                <!-- 6. Encendedores -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=accesorios" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Encendedores & Fósforos" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Encendedores & Fósforos</h3>
-                        <span class="category-card-sub">Accesorios de encendido seguro</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
-
-                <!-- 7. Inciensos -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=inciensos" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Inciensos & Sahumerios" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Inciensos & Sahumerios</h3>
-                        <span class="category-card-sub">Armonización y ambientación</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
-
-                <!-- 8. Citronela -->
-                <article class="category-card-vsm">
-                    <a href="preview-catalogo.html?cat=citronela" class="category-card-link">
-                        <div class="category-img-container">
-                            <img src="assets/img/vela.webp" alt="Citronela & Repelentes" class="cat-img-element" width="350" height="350" loading="lazy">
-                        </div>
-                        <h3 class="category-card-name">Citronela & Repelentes</h3>
-                        <span class="category-card-sub">Protección natural para exteriores</span>
-                        <span class="category-card-btn-action">Ver línea &rarr;</span>
-                    </a>
-                </article>
-
-            </div>
         </div>
     </section>
 
     <!-- =======================================================================
-         6. CARRUSEL HORIZONTAL DE REELS / VIDEOS DE INSTAGRAM
+         2. CARRUSEL HORIZONTAL DE REELS / VIDEOS DE INSTAGRAM
          ======================================================================= -->
     <section class="reels-showcase-section" id="reels-instagram" aria-label="Videos de Instagram">
         <div class="container-vsm">
@@ -500,6 +380,107 @@
     </section>
 
     <!-- =======================================================================
+         3. NUESTRAS VELAS (Barra Azul & Grid de 5 Categorías)
+         ======================================================================= -->
+    <section class="product-lines-section" id="lineas-productos">
+        <div class="section-title-navy-bar">
+            <div class="container-vsm">
+                <h2 class="title-navy-text">Nuestras Velas</h2>
+            </div>
+        </div>
+
+        <div class="container-vsm py-10">
+            <div class="categories-grid-vsm">
+                
+                <!-- 1. Velas Decorativas -->
+                <article class="category-card-vsm">
+                    <a href="preview-catalogo.html?cat=velas-decorativas" class="category-card-link">
+                        <div class="category-img-container">
+                            <img src="assets/img/velas-dcorativas.webp" alt="Velas Decorativas" class="cat-img-element" width="350" height="350" loading="lazy">
+                        </div>
+                        <h3 class="category-card-name">Velas Decorativas</h3>
+                        <span class="category-card-sub">Diseños pensados para ambientar y aportar estilo a cualquier espacio, combinando formas atractivas, aromas sutiles y detalles visuales que complementan la decoración del hogar.</span>
+                        <span class="category-card-btn-action">Ver línea &rarr;</span>
+                    </a>
+                </article>
+
+                <!-- 2. Velones -->
+                <article class="category-card-vsm">
+                    <a href="preview-catalogo.html?cat=velones" class="category-card-link">
+                        <div class="category-img-container">
+                            <img src="assets/img/velones.webp" alt="Velones" class="cat-img-element" width="350" height="350" loading="lazy">
+                        </div>
+                        <h3 class="category-card-name">Velones</h3>
+                        <span class="category-card-sub">Cirios gruesos de combustión prolongada y llama constante, ideales para altares, momentos de introspección, ceremonias o iluminación continua de larga duración.</span>
+                        <span class="category-card-btn-action">Ver línea &rarr;</span>
+                    </a>
+                </article>
+
+                <!-- 3. Veladoras -->
+                <article class="category-card-vsm">
+                    <a href="preview-catalogo.html?cat=veladoras" class="category-card-link">
+                        <div class="category-img-container">
+                            <img src="assets/img/veladoras.webp" alt="Veladoras" class="cat-img-element" width="350" height="350" loading="lazy">
+                        </div>
+                        <h3 class="category-card-name">Veladoras</h3>
+                        <span class="category-card-sub">Presentaciones clásicas en vaso o contenedor protector que aseguran un consumo limpio y seguro, pensadas para la devoción personal, peticiones y agradecimientos diarios.</span>
+                        <span class="category-card-btn-action">Ver línea &rarr;</span>
+                    </a>
+                </article>
+
+                <!-- 4. Velas de Semana Santa -->
+                <article class="category-card-vsm">
+                    <a href="preview-catalogo.html?cat=velas-de-semana-santa" class="category-card-link">
+                        <div class="category-img-container">
+                            <img src="assets/img/Velas-de-semana-santa.webp" alt="Velas de Semana Santa" class="cat-img-element" width="350" height="350" loading="lazy">
+                        </div>
+                        <h3 class="category-card-name">Velas de Semana Santa</h3>
+                        <span class="category-card-sub">Cirios y velas ceremoniales elaborados especialmente para acompañar la solemnidad litúrgica, vigilias, procesiones y tradiciones de la Pascua.</span>
+                        <span class="category-card-btn-action">Ver línea &rarr;</span>
+                    </a>
+                </article>
+
+                <!-- 5. Velas Navideñas -->
+                <article class="category-card-vsm">
+                    <a href="preview-catalogo.html?cat=velas-navidenas" class="category-card-link">
+                        <div class="category-img-container">
+                            <img src="assets/img/Velas-navidenas.webp" alt="Velas Navideñas" class="cat-img-element" width="350" height="350" loading="lazy">
+                        </div>
+                        <h3 class="category-card-name">Velas Navideñas</h3>
+                        <span class="category-card-sub">Diseños con motivos festivos, colores tradicionales de temporada y destellos cálidos, perfectos para celebrar en familia las novenas y la época de fin de año.</span>
+                        <span class="category-card-btn-action">Ver línea &rarr;</span>
+                    </a>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =======================================================================
+         4. ENLACE INSTITUCIONAL RÁPIDO A NOSOTROS
+         ======================================================================= -->
+    <section class="home-nosotros-teaser-section" aria-label="Enlace a Nuestra Historia">
+        <div class="container-vsm">
+            <div class="home-teaser-card">
+                <div class="home-teaser-text">
+                    <span class="teaser-tag">Nuestra Tradición</span>
+                    <h2 class="teaser-title">Más de 30 años de experiencia e iluminación artesanal</h2>
+                    <p class="teaser-desc">Fabricamos velas y velones con mecha de algodón puro y parafina de máxima pureza para asegurar una combustión limpia y duradera.</p>
+                </div>
+                <div class="home-teaser-action">
+                    <a href="preview-nosotros.html" class="btn-secondary">
+                        <span>Conoce nuestra historia</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =======================================================================
          7. UBICACION Y SEDES (Google Maps Cúcuta & Sedes de Atención)
          ======================================================================= -->
     <section class="store-location-section" id="ubicacion" aria-label="Ubicacion y Sedes">
@@ -679,6 +660,12 @@
                             </svg>
                             <span>Facebook</span>
                         </a>
+                        <a href="https://www.tiktok.com/@veladorassantamaria" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok de Veladoras Santa María" title="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.48 6.28 6.28 0 0 0 1.9-4.47V8.4a8.27 8.27 0 0 0 4.87 1.58V6.52a4.83 4.83 0 0 1-1-.05z"/>
+                            </svg>
+                            <span>TikTok</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -686,12 +673,11 @@
             <div class="footer-col">
                 <h3 class="footer-title">Líneas de Productos</h3>
                 <ul class="footer-links-list">
-                    <li><a href="preview-catalogo.html?cat=velones">Velones Tradicionales</a></li>
-                    <li><a href="preview-catalogo.html?cat=velas">Velas Blancas y de Colores</a></li>
-                    <li><a href="preview-catalogo.html?cat=devocionales">Veladoras de Vaso Devocionales</a></li>
-                    <li><a href="preview-catalogo.html?cat=cirios">Cirios Pascuales</a></li>
-                    <li><a href="preview-catalogo.html?cat=aromas">Velas Aromáticas y Esencias</a></li>
-                    <li><a href="preview-catalogo.html?cat=citronela">Línea Citronela Exterior</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas-decorativas">Velas Decorativas</a></li>
+                    <li><a href="preview-catalogo.html?cat=velones">Velones</a></li>
+                    <li><a href="preview-catalogo.html?cat=veladoras">Veladoras</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas-de-semana-santa">Velas de Semana Santa</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas-navidenas">Velas Navideñas</a></li>
                 </ul>
             </div>
 
@@ -724,7 +710,7 @@
                 </p>
                 <p class="footer-contact-item">
                     <strong>Correo Electrónico:</strong><br>
-                    <a href="mailto:contacto@veladorassantamaria.com">contacto@veladorassantamaria.com</a>
+                    <a href="mailto:info@veladorassantamaria.com">info@veladorassantamaria.com</a>
                 </p>
             </div>
         </div>
@@ -742,6 +728,11 @@
                 <a href="https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/" target="_blank" rel="noopener" aria-label="Facebook Veladoras Santa María">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@veladorassantamaria" target="_blank" rel="noopener" aria-label="TikTok @veladorassantamaria">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.48 6.28 6.28 0 0 0 1.9-4.47V8.4a8.27 8.27 0 0 0 4.87 1.58V6.52a4.83 4.83 0 0 1-1-.05z"/>
                     </svg>
                 </a>
             </div>

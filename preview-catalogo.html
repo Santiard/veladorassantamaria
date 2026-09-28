@@ -49,7 +49,8 @@
 
             <!-- Enlaces de Navegación a la Izquierda -->
             <nav class="header-main-nav" aria-label="Navegación principal">
-                <a href="preview-catalogo.html" class="header-nav-link" style="color: var(--color-blue); font-weight: 800;">Catálogo</a>
+                <a href="preview.html" class="header-nav-link">Inicio</a>
+                <a href="preview-catalogo.html" class="header-nav-link active">Catálogo</a>
                 <a href="preview-nosotros.html" class="header-nav-link">Nosotros</a>
             </nav>
         </div>
@@ -149,7 +150,7 @@
                     type="search" 
                     id="catalogSearchInput" 
                     class="catalog-search-input" 
-                    placeholder="Buscar velón, cirio, devocional, aroma o accesorio..." 
+                    placeholder="Buscar velas decorativas, velones, veladoras, semana santa, navidad..." 
                     autocomplete="off"
                     aria-label="Buscar en el catálogo"
                 />
@@ -168,26 +169,20 @@
                 <button type="button" class="catalog-filter-btn active" data-filter="todos">
                     <span>Todos</span>
                 </button>
+                <button type="button" class="catalog-filter-btn" data-filter="velas-decorativas">
+                    <span>Velas Decorativas</span>
+                </button>
                 <button type="button" class="catalog-filter-btn" data-filter="velones">
                     <span>Velones</span>
                 </button>
-                <button type="button" class="catalog-filter-btn" data-filter="devocionales">
-                    <span>Veladoras de Vaso</span>
+                <button type="button" class="catalog-filter-btn" data-filter="veladoras">
+                    <span>Veladoras</span>
                 </button>
-                <button type="button" class="catalog-filter-btn" data-filter="velas">
-                    <span>Velas Tradicionales</span>
+                <button type="button" class="catalog-filter-btn" data-filter="velas-de-semana-santa">
+                    <span>Velas de Semana Santa</span>
                 </button>
-                <button type="button" class="catalog-filter-btn" data-filter="cirios">
-                    <span>Cirios Pascuales</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="aromas">
-                    <span>Aromas & Esencias</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="citronela">
-                    <span>Citronela</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="accesorios">
-                    <span>Accesorios</span>
+                <button type="button" class="catalog-filter-btn" data-filter="velas-navidenas">
+                    <span>Velas Navideñas</span>
                 </button>
             </div>
         </nav>
@@ -197,14 +192,14 @@
             <div class="catalog-products-grid" id="catalogProductsGrid">
                 
                 <!-- Producto 1 -->
-                <article class="product-card-minimal" data-category="devocionales" id="prod-1">
+                <article class="product-card-minimal" data-category="velas-decorativas" id="prod-1">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Más Vendido</span>
-                        <a href="preview-producto.html?id=1" class="product-img-link" aria-label="Ver detalles de Velón envase de vidrio Virgen del Carmen">
-                            <img src="assets/img/vela.webp" alt="Velón envase de vidrio – Virgen del Carmen" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=1" class="product-img-link" aria-label="Ver detalles de Vela Decorativa en Vaso Elegance">
+                            <img src="assets/img/velas-dcorativas.webp" alt="Vela Decorativa en Vaso Elegance" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=1" class="btn-ver-detalles" aria-label="Ver detalles de Velón envase de vidrio Virgen del Carmen">
+                            <a href="preview-producto.html?id=1" class="btn-ver-detalles" aria-label="Ver detalles de Vela Decorativa en Vaso Elegance">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -214,15 +209,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">DEVOCIONALES</span>
+                        <span class="product-card-cat">VELAS DECORATIVAS</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=1">
-                                Velón envase de vidrio – Virgen del Carmen
+                                Vela Decorativa en Vaso Elegance
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 9.480</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%20envase%20de%20vidrio%20Virgen%20del%20Carmen" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón Virgen del Carmen">
+                            <span class="product-card-price">$ 14.900</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vela%20Decorativa%20en%20Vaso%20Elegance" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Vela Decorativa">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -233,14 +228,14 @@
                 </article>
 
                 <!-- Producto 2 -->
-                <article class="product-card-minimal" data-category="accesorios" id="prod-2">
+                <article class="product-card-minimal" data-category="veladoras" id="prod-2">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Práctico & Seguro</span>
-                        <a href="preview-producto.html?id=2" class="product-img-link" aria-label="Ver detalles de Encendedor Eléctrico Recargable">
-                            <img src="assets/img/vela.webp" alt="Encendedor Eléctrico Recargable para velones" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=2" class="product-img-link" aria-label="Ver detalles de Veladora Santa María Tradicional en Vaso">
+                            <img src="assets/img/veladoras.webp" alt="Veladora Santa María Tradicional en Vaso" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=2" class="btn-ver-detalles" aria-label="Ver detalles de Encendedor Eléctrico Recargable">
+                            <a href="preview-producto.html?id=2" class="btn-ver-detalles" aria-label="Ver detalles de Veladora Santa María Tradicional en Vaso">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -250,15 +245,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">ACCESORIOS</span>
+                        <span class="product-card-cat">VELADORAS</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=2">
-                                Encendedor Eléctrico Recargable para velones
+                                Veladora Santa María Tradicional en Vaso
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 13.800</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Encendedor%20El%C3%A9ctrico%20Recargable" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Encendedor">
+                            <span class="product-card-price">$ 9.480</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Veladora%20Santa%20Mar%C3%ADa%20Tradicional%20en%20Vaso" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Veladora Tradicional">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -269,14 +264,14 @@
                 </article>
 
                 <!-- Producto 3 -->
-                <article class="product-card-minimal" data-category="devocionales" id="prod-3">
+                <article class="product-card-minimal" data-category="velas-navidenas" id="prod-3">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Devoción</span>
-                        <a href="preview-producto.html?id=3" class="product-img-link" aria-label="Ver detalles de Velón Virgen Milagrosa">
-                            <img src="assets/img/vela.webp" alt="Velón envase de vidrio – Virgen Milagrosa" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=3" class="product-img-link" aria-label="Ver detalles de Velas Navideñas de Colores">
+                            <img src="assets/img/Velas-navidenas.webp" alt="Velas Navideñas de Colores – Paquete Tradicional" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=3" class="btn-ver-detalles" aria-label="Ver detalles de Velón Virgen Milagrosa">
+                            <a href="preview-producto.html?id=3" class="btn-ver-detalles" aria-label="Ver detalles de Velas Navideñas de Colores">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -286,15 +281,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">DEVOCIONALES</span>
+                        <span class="product-card-cat">VELAS NAVIDEÑAS</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=3">
-                                Velón envase de vidrio – Virgen Milagrosa
+                                Velas Navideñas de Colores – Paquete Tradicional
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 9.480</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%20Virgen%20Milagrosa" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón Virgen Milagrosa">
+                            <span class="product-card-price">$ 11.500</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Velas%20Navide%C3%B1as%20de%20Colores" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velas Navideñas">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -305,14 +300,14 @@
                 </article>
 
                 <!-- Producto 4 -->
-                <article class="product-card-minimal" data-category="devocionales" id="prod-4">
+                <article class="product-card-minimal" data-category="velones" id="prod-4">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Fe & Tradición</span>
-                        <a href="preview-producto.html?id=4" class="product-img-link" aria-label="Ver detalles de Velón Señor de los Milagros">
-                            <img src="assets/img/vela.webp" alt="Velón envase de vidrio – Señor de los Milagros" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=4" class="product-img-link" aria-label="Ver detalles de Velón Litúrgico y Ceremonial">
+                            <img src="assets/img/velones.webp" alt="Velón Litúrgico y Ceremonial de Larga Duración" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=4" class="btn-ver-detalles" aria-label="Ver detalles de Velón Señor de los Milagros">
+                            <a href="preview-producto.html?id=4" class="btn-ver-detalles" aria-label="Ver detalles de Velón Litúrgico y Ceremonial">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -322,15 +317,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">DEVOCIONALES</span>
+                        <span class="product-card-cat">VELONES</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=4">
-                                Velón envase de vidrio – Señor de los Milagros
+                                Velón Litúrgico y Ceremonial de Larga Duración
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 9.480</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%20Se%C3%B1or%20de%20los%20Milagros" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón Señor de los Milagros">
+                            <span class="product-card-price">$ 16.500</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%20Lit%C3%BArgico" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón Litúrgico">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -341,14 +336,14 @@
                 </article>
 
                 <!-- Producto 5 -->
-                <article class="product-card-minimal" data-category="velones" id="prod-5">
+                <article class="product-card-minimal" data-category="velas-de-semana-santa" id="prod-5">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Larga Duración</span>
-                        <a href="preview-producto.html?id=5" class="product-img-link" aria-label="Ver detalles de Velón 22 Blanco">
-                            <img src="assets/img/vela.webp" alt="Velón #22 Blanco – Cera pura para decoraciones" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=5" class="product-img-link" aria-label="Ver detalles de Cirio Pascual y Vela de Semana Santa">
+                            <img src="assets/img/Velas-de-semana-santa.webp" alt="Cirio Pascual y Vela de Semana Santa Solemne" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=5" class="btn-ver-detalles" aria-label="Ver detalles de Velón 22 Blanco">
+                            <a href="preview-producto.html?id=5" class="btn-ver-detalles" aria-label="Ver detalles de Cirio Pascual y Vela de Semana Santa">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -358,15 +353,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">VELONES</span>
+                        <span class="product-card-cat">VELAS DE SEMANA SANTA</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=5">
-                                Velón #22 Blanco – Cera pura para decoraciones
+                                Cirio Pascual y Vela de Semana Santa Solemne
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 31.900</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%2022%20Blanco" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón 22 Blanco">
+                            <span class="product-card-price">$ 12.900</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Cirio%20Pascual%20Semana%20Santa" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Cirio Pascual">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -377,14 +372,14 @@
                 </article>
 
                 <!-- Producto 6 -->
-                <article class="product-card-minimal" data-category="velones" id="prod-6">
+                <article class="product-card-minimal" data-category="velas-decorativas" id="prod-6">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Clásico</span>
-                        <a href="preview-producto.html?id=6" class="product-img-link" aria-label="Ver detalles de Velón 15 Amarillo">
-                            <img src="assets/img/vela.webp" alt="Velón Santa María #15 Amarillo Tradicional" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=6" class="product-img-link" aria-label="Ver detalles de Vela Decorativa Cilindro Blanco">
+                            <img src="assets/img/velas-dcorativas.webp" alt="Vela Decorativa Cilindro Blanco" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=6" class="btn-ver-detalles" aria-label="Ver detalles de Velón 15 Amarillo">
+                            <a href="preview-producto.html?id=6" class="btn-ver-detalles" aria-label="Ver detalles de Vela Decorativa Cilindro Blanco">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -394,15 +389,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">VELONES</span>
+                        <span class="product-card-cat">VELAS DECORATIVAS</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=6">
-                                Velón Santa María #15 Amarillo Tradicional
+                                Vela Decorativa Cilindro Blanco
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 15.200</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%2015%20Amarillo" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón 15 Amarillo">
+                            <span class="product-card-price">$ 18.500</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vela%20Decorativa%20Cilindro%20Blanco" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Vela Decorativa Cilindro">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -413,14 +408,14 @@
                 </article>
 
                 <!-- Producto 7 -->
-                <article class="product-card-minimal" data-category="velones" id="prod-7">
+                <article class="product-card-minimal" data-category="veladoras" id="prod-7">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Especial</span>
-                        <a href="preview-producto.html?id=7" class="product-img-link" aria-label="Ver detalles de Velón 18 Blanco">
-                            <img src="assets/img/vela.webp" alt="Velón #18 Blanco con etiqueta decorativa" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=7" class="product-img-link" aria-label="Ver detalles de Veladora Mediana Devocional">
+                            <img src="assets/img/veladoras.webp" alt="Veladora Mediana Devocional" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=7" class="btn-ver-detalles" aria-label="Ver detalles de Velón 18 Blanco">
+                            <a href="preview-producto.html?id=7" class="btn-ver-detalles" aria-label="Ver detalles de Veladora Mediana Devocional">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -430,15 +425,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">VELONES</span>
+                        <span class="product-card-cat">VELADORAS</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=7">
-                                Velón #18 Blanco con etiqueta decorativa
+                                Veladora Mediana Devocional
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 18.500</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%2018%20Blanco" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón 18 Blanco">
+                            <span class="product-card-price">$ 12.500</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Veladora%20Mediana%20Devocional" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Veladora Mediana">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -449,14 +444,50 @@
                 </article>
 
                 <!-- Producto 8 -->
-                <article class="product-card-minimal" data-category="velones" id="prod-8">
+                <article class="product-card-minimal" data-category="velas-navidenas" id="prod-8">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Paquete x 12</span>
-                        <a href="preview-producto.html?id=8" class="product-img-link" aria-label="Ver detalles de 12 Velones Pequeños Blancos">
-                            <img src="assets/img/vela.webp" alt="12 Velones Pequeños Blancos" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=8" class="product-img-link" aria-label="Ver detalles de Velas Navideñas Rojas y Blancas">
+                            <img src="assets/img/Velas-navidenas.webp" alt="Velas Navideñas Rojas y Blancas – Set Familiar" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=8" class="btn-ver-detalles" aria-label="Ver detalles de 12 Velones Pequeños Blancos">
+                            <a href="preview-producto.html?id=8" class="btn-ver-detalles" aria-label="Ver detalles de Velas Navideñas Rojas y Blancas">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span>Ver detalles</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-card-body">
+                        <span class="product-card-cat">VELAS NAVIDEÑAS</span>
+                        <h2 class="product-card-title">
+                            <a href="preview-producto.html?id=8">
+                                Velas Navideñas Rojas y Blancas – Set Familiar
+                            </a>
+                        </h2>
+                        <div class="product-card-price-row">
+                            <span class="product-card-price">$ 13.800</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Velas%20Navide%C3%B1as%20Rojas%20y%20Blancas" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velas Navideñas">
+                                <span>Pedir</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Producto 9 -->
+                <article class="product-card-minimal" data-category="velones" id="prod-9">
+                    <div class="product-img-box">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=9" class="product-img-link" aria-label="Ver detalles de Velón Devocional para Altar y Oración">
+                            <img src="assets/img/velones.webp" alt="Velón Devocional para Altar y Oración" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        </a>
+                        <div class="product-img-overlay">
+                            <a href="preview-producto.html?id=9" class="btn-ver-detalles" aria-label="Ver detalles de Velón Devocional para Altar y Oración">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -468,49 +499,13 @@
                     <div class="product-card-body">
                         <span class="product-card-cat">VELONES</span>
                         <h2 class="product-card-title">
-                            <a href="preview-producto.html?id=8">
-                                12 Velones Pequeños Blancos – 2.8 cm de diámetro
-                            </a>
-                        </h2>
-                        <div class="product-card-price-row">
-                            <span class="product-card-price">$ 7.450</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%2012%20Velones%20Peque%C3%B1os%20Blancos" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir 12 Velones Pequeños">
-                                <span>Pedir</span>
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="9 18 15 12 9 6"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Producto 9 -->
-                <article class="product-card-minimal" data-category="cirios" id="prod-9">
-                    <div class="product-img-box">
-                        <span class="product-badge-pill">Artesanal</span>
-                        <a href="preview-producto.html?id=9" class="product-img-link" aria-label="Ver detalles de Cirio Pascual Litúrgico Ceremonial">
-                            <img src="assets/img/vela.webp" alt="Cirio Pascual Litúrgico Ceremonial 50 cm" class="product-thumb-img" width="300" height="300" loading="lazy">
-                        </a>
-                        <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=9" class="btn-ver-detalles" aria-label="Ver detalles de Cirio Pascual Litúrgico Ceremonial">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                                <span>Ver detalles</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-card-body">
-                        <span class="product-card-cat">CIRIOS PASCUALES</span>
-                        <h2 class="product-card-title">
                             <a href="preview-producto.html?id=9">
-                                Cirio Pascual Litúrgico Ceremonial 50 cm
+                                Velón Devocional para Altar y Oración
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 48.000</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Cirio%20Pascual%2050cm" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Cirio Pascual">
+                            <span class="product-card-price">$ 19.200</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vel%C3%B3n%20Devocional%20para%20Altar%20y%20Oraci%C3%B3n" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón Devocional">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -521,14 +516,14 @@
                 </article>
 
                 <!-- Producto 10 -->
-                <article class="product-card-minimal" data-category="velas" id="prod-10">
+                <article class="product-card-minimal" data-category="velas-de-semana-santa" id="prod-10">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Hogar y Templo</span>
-                        <a href="preview-producto.html?id=10" class="product-img-link" aria-label="Ver detalles de Velas Blancas Tradicionales">
-                            <img src="assets/img/vela.webp" alt="Velas Blancas Tradicionales – Paquete x 20 unidades" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=10" class="product-img-link" aria-label="Ver detalles de Vela Ceremonial para Vigilia Pascual">
+                            <img src="assets/img/Velas-de-semana-santa.webp" alt="Vela Ceremonial para Vigilia Pascual" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=10" class="btn-ver-detalles" aria-label="Ver detalles de Velas Blancas Tradicionales">
+                            <a href="preview-producto.html?id=10" class="btn-ver-detalles" aria-label="Ver detalles de Vela Ceremonial para Vigilia Pascual">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -538,15 +533,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">VELAS TRADICIONALES</span>
+                        <span class="product-card-cat">VELAS DE SEMANA SANTA</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=10">
-                                Velas Blancas Tradicionales – Paquete x 20 unidades
+                                Vela Ceremonial para Vigilia Pascual
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 11.500</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Velas%20Blancas%20x20" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velas Blancas">
+                            <span class="product-card-price">$ 14.500</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vela%20Ceremonial%20para%20Vigilia%20Pascual" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Vela Ceremonial">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -557,14 +552,14 @@
                 </article>
 
                 <!-- Producto 11 -->
-                <article class="product-card-minimal" data-category="aromas" id="prod-11">
+                <article class="product-card-minimal" data-category="velas-decorativas" id="prod-11">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Relajante</span>
-                        <a href="preview-producto.html?id=11" class="product-img-link" aria-label="Ver detalles de Vela Aromática Lavanda">
-                            <img src="assets/img/vela.webp" alt="Vela Aromática en Vaso – Lavanda y Flor de Azahar" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=11" class="product-img-link" aria-label="Ver detalles de Vela Decorativa Esculpida">
+                            <img src="assets/img/velas-dcorativas.webp" alt="Vela Decorativa Esculpida Diseño Floral" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=11" class="btn-ver-detalles" aria-label="Ver detalles de Vela Aromática Lavanda">
+                            <a href="preview-producto.html?id=11" class="btn-ver-detalles" aria-label="Ver detalles de Vela Decorativa Esculpida">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -574,15 +569,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">AROMAS & ESENCIAS</span>
+                        <span class="product-card-cat">VELAS DECORATIVAS</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=11">
-                                Vela Aromática en Vaso – Lavanda y Flor de Azahar
+                                Vela Decorativa Esculpida Diseño Floral
                             </a>
                         </h2>
                         <div class="product-card-price-row">
-                            <span class="product-card-price">$ 14.900</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vela%20Aromatica%20Lavanda" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Vela Aromática">
+                            <span class="product-card-price">$ 22.000</span>
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Vela%20Decorativa%20Esculpida" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Vela Decorativa Esculpida">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -593,14 +588,14 @@
                 </article>
 
                 <!-- Producto 12 -->
-                <article class="product-card-minimal" data-category="citronela" id="prod-12">
+                <article class="product-card-minimal" data-category="veladoras" id="prod-12">
                     <div class="product-img-box">
-                        <span class="product-badge-pill">Repelente</span>
-                        <a href="preview-producto.html?id=12" class="product-img-link" aria-label="Ver detalles de Velón Citronela">
-                            <img src="assets/img/vela.webp" alt="Velón de Citronela Especial Exterior con Tapa" class="product-thumb-img" width="300" height="300" loading="lazy">
+                        <span class="product-badge-pill">Precio por unidad</span>
+                        <a href="preview-producto.html?id=12" class="product-img-link" aria-label="Ver detalles de Veladora Extra Duración">
+                            <img src="assets/img/veladoras.webp" alt="Veladora Extra Duración en Vaso Grande" class="product-thumb-img" width="300" height="300" loading="lazy">
                         </a>
                         <div class="product-img-overlay">
-                            <a href="preview-producto.html?id=12" class="btn-ver-detalles" aria-label="Ver detalles de Velón Citronela">
+                            <a href="preview-producto.html?id=12" class="btn-ver-detalles" aria-label="Ver detalles de Veladora Extra Duración">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -610,15 +605,15 @@
                         </div>
                     </div>
                     <div class="product-card-body">
-                        <span class="product-card-cat">CITRONELA</span>
+                        <span class="product-card-cat">VELADORAS</span>
                         <h2 class="product-card-title">
                             <a href="preview-producto.html?id=12">
-                                Velón de Citronela Especial Exterior con Tapa
+                                Veladora Extra Duración en Vaso Grande
                             </a>
                         </h2>
                         <div class="product-card-price-row">
                             <span class="product-card-price">$ 16.500</span>
-                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Velon%20Citronela" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Velón Citronela">
+                            <a href="https://wa.me/573144753682?text=Hola,%20deseo%20pedir:%20Veladora%20Extra%20Duraci%C3%B3n" target="_blank" rel="noopener" class="btn-product-order" aria-label="Pedir Veladora Extra Duración">
                                 <span>Pedir</span>
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="9 18 15 12 9 6"></polyline>
@@ -717,6 +712,12 @@
                             </svg>
                             <span>Facebook</span>
                         </a>
+                        <a href="https://www.tiktok.com/@veladorassantamaria" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok de Veladoras Santa María" title="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.48 6.28 6.28 0 0 0 1.9-4.47V8.4a8.27 8.27 0 0 0 4.87 1.58V6.52a4.83 4.83 0 0 1-1-.05z"/>
+                            </svg>
+                            <span>TikTok</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -724,12 +725,11 @@
             <div class="footer-col">
                 <h3 class="footer-title">Líneas de Productos</h3>
                 <ul class="footer-links-list">
-                    <li><a href="preview-catalogo.html?cat=velones">Velones Tradicionales</a></li>
-                    <li><a href="preview-catalogo.html?cat=velas">Velas Blancas y de Colores</a></li>
-                    <li><a href="preview-catalogo.html?cat=devocionales">Veladoras de Vaso Devocionales</a></li>
-                    <li><a href="preview-catalogo.html?cat=cirios">Cirios Pascuales</a></li>
-                    <li><a href="preview-catalogo.html?cat=aromas">Velas Aromáticas y Esencias</a></li>
-                    <li><a href="preview-catalogo.html?cat=citronela">Línea Citronela Exterior</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas-decorativas">Velas Decorativas</a></li>
+                    <li><a href="preview-catalogo.html?cat=velones">Velones</a></li>
+                    <li><a href="preview-catalogo.html?cat=veladoras">Veladoras</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas-de-semana-santa">Velas de Semana Santa</a></li>
+                    <li><a href="preview-catalogo.html?cat=velas-navidenas">Velas Navideñas</a></li>
                 </ul>
             </div>
 
@@ -762,7 +762,7 @@
                 </p>
                 <p class="footer-contact-item">
                     <strong>Correo Electrónico:</strong><br>
-                    <a href="mailto:contacto@veladorassantamaria.com">contacto@veladorassantamaria.com</a>
+                    <a href="mailto:info@veladorassantamaria.com">info@veladorassantamaria.com</a>
                 </p>
             </div>
         </div>
@@ -780,6 +780,11 @@
                 <a href="https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/" target="_blank" rel="noopener" aria-label="Facebook Veladoras Santa María">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@veladorassantamaria" target="_blank" rel="noopener" aria-label="TikTok @veladorassantamaria">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.48 6.28 6.28 0 0 0 1.9-4.47V8.4a8.27 8.27 0 0 0 4.87 1.58V6.52a4.83 4.83 0 0 1-1-.05z"/>
                     </svg>
                 </a>
             </div>

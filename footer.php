@@ -76,6 +76,12 @@
                             </svg>
                             <span>Facebook</span>
                         </a>
+                        <a href="https://www.tiktok.com/@veladorassantamaria" target="_blank" rel="noopener" class="footer-social-btn" aria-label="TikTok de Veladoras Santa María" title="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.48 6.28 6.28 0 0 0 1.9-4.47V8.4a8.27 8.27 0 0 0 4.87 1.58V6.52a4.83 4.83 0 0 1-1-.05z"/>
+                            </svg>
+                            <span>TikTok</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -84,12 +90,11 @@
             <div class="footer-col">
                 <h3 class="footer-title">Líneas de Productos</h3>
                 <ul class="footer-links-list">
-                    <li><a href="#velones">Velones Tradicionales</a></li>
-                    <li><a href="#velas">Velas Blancas y de Colores</a></li>
-                    <li><a href="#devocionales">Veladoras de Vaso Devocionales</a></li>
-                    <li><a href="#cirios">Cirios Pascuales</a></li>
-                    <li><a href="#aromas">Velas Aromáticas y Esencias</a></li>
-                    <li><a href="#citronela">Línea Citronela Exterior</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/catalogo/?cat=velas-decorativas' ) ); ?>">Velas Decorativas</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/catalogo/?cat=velones' ) ); ?>">Velones</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/catalogo/?cat=veladoras' ) ); ?>">Veladoras</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/catalogo/?cat=velas-de-semana-santa' ) ); ?>">Velas de Semana Santa</a></li>
+                    <li><a href="<?php echo esc_url( home_url( '/catalogo/?cat=velas-navidenas' ) ); ?>">Velas Navideñas</a></li>
                 </ul>
             </div>
 
@@ -124,7 +129,7 @@
                 </p>
                 <p class="footer-contact-item">
                     <strong>Correo Electrónico:</strong><br>
-                    <a href="mailto:contacto@veladorassantamaria.com">contacto@veladorassantamaria.com</a>
+                    <a href="mailto:info@veladorassantamaria.com">info@veladorassantamaria.com</a>
                 </p>
             </div>
 
@@ -144,6 +149,11 @@
                 <a href="https://www.facebook.com/people/Veladoras-Santa-Maria/100093007599538/" target="_blank" rel="noopener" aria-label="Facebook Veladoras Santa María">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@veladorassantamaria" target="_blank" rel="noopener" aria-label="TikTok @veladorassantamaria">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.82 4.48 6.28 6.28 0 0 0 1.9-4.47V8.4a8.27 8.27 0 0 0 4.87 1.58V6.52a4.83 4.83 0 0 1-1-.05z"/>
                     </svg>
                 </a>
             </div>

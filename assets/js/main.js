@@ -284,6 +284,131 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // =========================================================================
+    // 5.1 Slider de Banners Horizontales (Hero Slider Rotativo)
+    // =========================================================================
+    const heroSlider = document.getElementById('heroBannerSlider');
+    const heroSliderTrack = document.getElementById('heroSliderTrack');
+    const heroPrevBtn = document.getElementById('heroSliderPrev');
+    const heroNextBtn = document.getElementById('heroSliderNext');
+    const heroDotsContainer = document.getElementById('heroSliderDots');
+
+    if (heroSlider && heroSliderTrack) {
+        const slides = Array.from(heroSliderTrack.querySelectorAll('.hero-slide'));
+        const totalSlides = slides.length;
+
+        if (totalSlides > 0) {
+            let currentSlide = 0;
+            let slideInterval = null;
+            const slideDelay = 5000; // 5 segundos por slide
+
+            // Crear puntos de paginación dinámicamente si no existen
+            if (heroDotsContainer && heroDotsContainer.children.length === 0) {
+                slides.forEach((_, idx) => {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'hero-dot' + (idx === 0 ? ' active' : '');
+                    dot.setAttribute('role', 'tab');
+                    dot.setAttribute('aria-label', `Ir al banner ${idx + 1}`);
+                    dot.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+                    dot.addEventListener('click', () => {
+                        goToSlide(idx);
+                        restartAutoPlay();
+                    });
+                    heroDotsContainer.appendChild(dot);
+                });
+            }
+
+            const dots = heroDotsContainer ? Array.from(heroDotsContainer.querySelectorAll('.hero-dot')) : [];
+
+            function goToSlide(index) {
+                currentSlide = (index + totalSlides) % totalSlides;
+                heroSliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+                slides.forEach((slide, idx) => {
+                    slide.classList.toggle('active', idx === currentSlide);
+                });
+
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === currentSlide);
+                    dot.setAttribute('aria-selected', idx === currentSlide ? 'true' : 'false');
+                });
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            function startAutoPlay() {
+                if (totalSlides > 1 && !slideInterval) {
+                    slideInterval = setInterval(nextSlide, slideDelay);
+                }
+            }
+
+            function stopAutoPlay() {
+                if (slideInterval) {
+                    clearInterval(slideInterval);
+                    slideInterval = null;
+                }
+            }
+
+            function restartAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            if (heroNextBtn) {
+                heroNextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    restartAutoPlay();
+                });
+            }
+
+            if (heroPrevBtn) {
+                heroPrevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    restartAutoPlay();
+                });
+            }
+
+            // Pausar en hover para lectura o clic
+            heroSlider.addEventListener('mouseenter', stopAutoPlay);
+            heroSlider.addEventListener('mouseleave', startAutoPlay);
+            heroSlider.addEventListener('focusin', stopAutoPlay);
+            heroSlider.addEventListener('focusout', startAutoPlay);
+
+            // Soporte para gestos táctiles (Swipe en móviles)
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            heroSlider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoPlay();
+            }, { passive: true });
+
+            heroSlider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diffX = touchEndX - touchStartX;
+                if (Math.abs(diffX) > 40) {
+                    if (diffX < 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+                startAutoPlay();
+            }, { passive: true });
+
+            // Inicializar slider
+            goToSlide(0);
+            startAutoPlay();
+        }
+    }
+
+    // =========================================================================
     // 6. Carrusel Horizontal Interactivo de Reels de Instagram (Loop Continuo Circular)
     // =========================================================================
     const reelsCarousel = document.getElementById('reelsCarousel');
@@ -546,18 +671,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const standardDescription = 'Producto elaborado con materiales de alta calidad y tradición cerera Santa María. Ideal para el hogar, templos y momentos de oración o ambientación.';
 
         const catalogProductsData = [
-            { id: 1, nombre: 'Velón envase de vidrio – Virgen del Carmen', categoria_slug: 'devocionales', categoria_nombre: 'DEVOCIONALES', precio_formato: '$ 9.480', imagen: 'assets/img/vela.webp', etiqueta: 'Más Vendido', sku: 'DEV-VC-001' },
-            { id: 2, nombre: 'Encendedor Eléctrico Recargable para velones', categoria_slug: 'accesorios', categoria_nombre: 'ACCESORIOS', precio_formato: '$ 13.800', imagen: 'assets/img/vela.webp', etiqueta: 'Práctico & Seguro', sku: 'ACC-ENC-002' },
-            { id: 3, nombre: 'Velón envase de vidrio – Virgen Milagrosa', categoria_slug: 'devocionales', categoria_nombre: 'DEVOCIONALES', precio_formato: '$ 9.480', imagen: 'assets/img/vela.webp', etiqueta: 'Devoción', sku: 'DEV-VM-003' },
-            { id: 4, nombre: 'Velón envase de vidrio – Señor de los Milagros', categoria_slug: 'devocionales', categoria_nombre: 'DEVOCIONALES', precio_formato: '$ 9.480', imagen: 'assets/img/vela.webp', etiqueta: 'Fe & Tradición', sku: 'DEV-SM-004' },
-            { id: 5, nombre: 'Velón #22 Blanco – Cera pura para decoraciones', categoria_slug: 'velones', categoria_nombre: 'VELONES', precio_formato: '$ 31.900', imagen: 'assets/img/vela.webp', etiqueta: 'Larga Duración', sku: 'VEL-B22-005' },
-            { id: 6, nombre: 'Velón Santa María #15 Amarillo Tradicional', categoria_slug: 'velones', categoria_nombre: 'VELONES', precio_formato: '$ 15.200', imagen: 'assets/img/vela.webp', etiqueta: 'Clásico', sku: 'VEL-A15-006' },
-            { id: 7, nombre: 'Velón #18 Blanco con etiqueta decorativa', categoria_slug: 'velones', categoria_nombre: 'VELONES', precio_formato: '$ 18.500', imagen: 'assets/img/vela.webp', etiqueta: 'Especial', sku: 'VEL-B18-007' },
-            { id: 8, nombre: '12 Velones Pequeños Blancos – 2.8 cm de diámetro', categoria_slug: 'velones', categoria_nombre: 'VELONES', precio_formato: '$ 7.450', imagen: 'assets/img/vela.webp', etiqueta: 'Paquete x 12', sku: 'VEL-PX12-008' },
-            { id: 9, nombre: 'Cirio Pascual Litúrgico Ceremonial 50 cm', categoria_slug: 'cirios', categoria_nombre: 'CIRIOS PASCUALES', precio_formato: '$ 48.000', imagen: 'assets/img/vela.webp', etiqueta: 'Artesanal', sku: 'CIR-PAS-009' },
-            { id: 10, nombre: 'Velas Blancas Tradicionales – Paquete x 20 unidades', categoria_slug: 'velas', categoria_nombre: 'VELAS TRADICIONALES', precio_formato: '$ 11.500', imagen: 'assets/img/vela.webp', etiqueta: 'Hogar y Templo', sku: 'VELA-TRAD-010' },
-            { id: 11, nombre: 'Vela Aromática en Vaso – Lavanda y Flor de Azahar', categoria_slug: 'aromas', categoria_nombre: 'AROMAS & ESENCIAS', precio_formato: '$ 14.900', imagen: 'assets/img/vela.webp', etiqueta: 'Relajante', sku: 'ARO-LAV-011' },
-            { id: 12, nombre: 'Velón de Citronela Especial Exterior con Tapa', categoria_slug: 'citronela', categoria_nombre: 'CITRONELA', precio_formato: '$ 16.500', imagen: 'assets/img/vela.webp', etiqueta: 'Repelente', sku: 'CIT-EXT-012' }
+            { id: 1, nombre: 'Vela Decorativa en Vaso Elegance', categoria_slug: 'velas-decorativas', categoria_nombre: 'VELAS DECORATIVAS', precio_formato: '$ 14.900', imagen: 'assets/img/velas-dcorativas.webp', etiqueta: 'Precio por unidad', sku: 'DEC-001' },
+            { id: 2, nombre: 'Veladora Santa María Tradicional en Vaso', categoria_slug: 'veladoras', categoria_nombre: 'VELADORAS', precio_formato: '$ 9.480', imagen: 'assets/img/veladoras.webp', etiqueta: 'Precio por unidad', sku: 'VEL-002' },
+            { id: 3, nombre: 'Velas Navideñas de Colores – Paquete Tradicional', categoria_slug: 'velas-navidenas', categoria_nombre: 'VELAS NAVIDEÑAS', precio_formato: '$ 11.500', imagen: 'assets/img/Velas-navidenas.webp', etiqueta: 'Precio por unidad', sku: 'NAV-003' },
+            { id: 4, nombre: 'Velón Litúrgico y Ceremonial de Larga Duración', categoria_slug: 'velones', categoria_nombre: 'VELONES', precio_formato: '$ 16.500', imagen: 'assets/img/velones.webp', etiqueta: 'Precio por unidad', sku: 'VLN-004' },
+            { id: 5, nombre: 'Cirio Pascual y Vela de Semana Santa Solemne', categoria_slug: 'velas-de-semana-santa', categoria_nombre: 'VELAS DE SEMANA SANTA', precio_formato: '$ 12.900', imagen: 'assets/img/Velas-de-semana-santa.webp', etiqueta: 'Precio por unidad', sku: 'SEM-005' },
+            { id: 6, nombre: 'Vela Decorativa Cilindro Blanco', categoria_slug: 'velas-decorativas', categoria_nombre: 'VELAS DECORATIVAS', precio_formato: '$ 18.500', imagen: 'assets/img/velas-dcorativas.webp', etiqueta: 'Precio por unidad', sku: 'DEC-006' },
+            { id: 7, nombre: 'Veladora Mediana Devocional', categoria_slug: 'veladoras', categoria_nombre: 'VELADORAS', precio_formato: '$ 12.500', imagen: 'assets/img/veladoras.webp', etiqueta: 'Precio por unidad', sku: 'VEL-007' },
+            { id: 8, nombre: 'Velas Navideñas Rojas y Blancas – Set Familiar', categoria_slug: 'velas-navidenas', categoria_nombre: 'VELAS NAVIDEÑAS', precio_formato: '$ 13.800', imagen: 'assets/img/Velas-navidenas.webp', etiqueta: 'Precio por unidad', sku: 'NAV-008' },
+            { id: 9, nombre: 'Velón Devocional para Altar y Oración', categoria_slug: 'velones', categoria_nombre: 'VELONES', precio_formato: '$ 19.200', imagen: 'assets/img/velones.webp', etiqueta: 'Precio por unidad', sku: 'VLN-009' },
+            { id: 10, nombre: 'Vela Ceremonial para Vigilia Pascual', categoria_slug: 'velas-de-semana-santa', categoria_nombre: 'VELAS DE SEMANA SANTA', precio_formato: '$ 14.500', imagen: 'assets/img/Velas-de-semana-santa.webp', etiqueta: 'Precio por unidad', sku: 'SEM-010' },
+            { id: 11, nombre: 'Vela Decorativa Esculpida Diseño Floral', categoria_slug: 'velas-decorativas', categoria_nombre: 'VELAS DECORATIVAS', precio_formato: '$ 22.000', imagen: 'assets/img/velas-dcorativas.webp', etiqueta: 'Precio por unidad', sku: 'DEC-011' },
+            { id: 12, nombre: 'Veladora Extra Duración en Vaso Grande', categoria_slug: 'veladoras', categoria_nombre: 'VELADORAS', precio_formato: '$ 16.500', imagen: 'assets/img/veladoras.webp', etiqueta: 'Precio por unidad', sku: 'VEL-012' }
         ];
 
         // Leer parámetro ?id=X de la URL

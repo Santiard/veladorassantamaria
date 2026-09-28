@@ -29,7 +29,7 @@ $productos = vsm_get_catalog_products();
                     type="search" 
                     id="catalogSearchInput" 
                     class="catalog-search-input" 
-                    placeholder="Buscar velón, cirio, devocional, aroma o accesorio..." 
+                    placeholder="Buscar velas decorativas, velones, veladoras, semana santa, navidad..." 
                     autocomplete="off"
                     aria-label="Buscar en el catálogo"
                 />
@@ -48,26 +48,20 @@ $productos = vsm_get_catalog_products();
                 <button type="button" class="catalog-filter-btn active" data-filter="todos">
                     <span>Todos</span>
                 </button>
+                <button type="button" class="catalog-filter-btn" data-filter="velas-decorativas">
+                    <span>Velas Decorativas</span>
+                </button>
                 <button type="button" class="catalog-filter-btn" data-filter="velones">
                     <span>Velones</span>
                 </button>
-                <button type="button" class="catalog-filter-btn" data-filter="devocionales">
-                    <span>Veladoras de Vaso</span>
+                <button type="button" class="catalog-filter-btn" data-filter="veladoras">
+                    <span>Veladoras</span>
                 </button>
-                <button type="button" class="catalog-filter-btn" data-filter="velas">
-                    <span>Velas Tradicionales</span>
+                <button type="button" class="catalog-filter-btn" data-filter="velas-de-semana-santa">
+                    <span>Velas de Semana Santa</span>
                 </button>
-                <button type="button" class="catalog-filter-btn" data-filter="cirios">
-                    <span>Cirios Pascuales</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="aromas">
-                    <span>Aromas & Esencias</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="citronela">
-                    <span>Citronela</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="accesorios">
-                    <span>Accesorios</span>
+                <button type="button" class="catalog-filter-btn" data-filter="velas-navidenas">
+                    <span>Velas Navideñas</span>
                 </button>
             </div>
         </nav>

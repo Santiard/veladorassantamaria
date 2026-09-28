@@ -30,39 +30,59 @@ global $vsm_img_banner_nosotros, $vsm_img_empresa_grande;
         </div>
     </section>
 
-    <!-- 2. Cuerpo Institucional y Narrativa de Historia -->
-    <section class="nosotros-story-section">
-        <div class="container-vsm nosotros-narrow-container">
+    <!-- 2. Sección Quiénes Somos & Compromiso (Layout 2 Columnas) -->
+    <section class="nosotros-overview-section" aria-label="Quiénes Somos y Nuestro Compromiso">
+        <div class="container-vsm">
+            <div class="nosotros-overview-grid">
+                
+                <!-- Columna Izquierda: Quiénes Somos -->
+                <div class="nosotros-col-about">
+                    <div class="nosotros-badge-header">
+                        <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/logopequeño.webp' ) ); ?>" alt="Velas y Velones Santa María" class="nosotros-badge-logo" width="46" height="46">
+                        <span class="nosotros-badge-tag">Nuestra Historia</span>
+                    </div>
 
-            <!-- Emblema Corporativo Oficial -->
-            <div class="nosotros-emblem-center">
-                <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/logopequeño.webp' ) ); ?>" alt="Velas y Velones Santa María" class="nosotros-emblem-img" width="70" height="70">
+                    <h2 class="nosotros-col-title">Quiénes Somos</h2>
+                    <div class="nosotros-title-divider"></div>
+
+                    <p class="nosotros-lead-text">
+                        Velas y Velones Santa Maria, fue creado en el año 1.999 por el señor <strong>FRANKO TALAL HARB</strong> en la ciudad de Cúcuta, Norte de Santander, Colombia. Dedicándose a la fabricación y comercialización de velas y veladoras despachando y ofreciendo su producto hacia la zona centro de la ciudad y sus alrededores, convirtiéndose en alternativa para la clientela de la ciudad.
+                    </p>
+
+                    <p class="nosotros-body-text">
+                        Actualmente la empresa posee una amplia capacidad de producción y estrictos controles de calidad para fabricar velas y veladoras con una amplia gama de variedad en colores y tamaños, cumpliendo las exigencias del mercado.
+                    </p>
+                </div>
+
+                <!-- Columna Derecha: Comprometidos con la Calidad y la Tradición -->
+                <div class="nosotros-col-commitment">
+                    <div class="nosotros-commitment-panel">
+                        <div class="commitment-panel-accent"></div>
+                        <span class="commitment-eyebrow">Propósito & Tradición</span>
+                        <h3 class="commitment-title">Comprometidos con la calidad y la tradición</h3>
+                        <p class="commitment-desc">
+                            Trabajamos cada día para que nuestras velas no solo iluminen espacios, sino también emociones y tradiciones. A través de procesos productivos eficientes y una selección cuidadosa de materiales, logramos crear productos que conectan con lo espiritual, lo cotidiano y lo especial.
+                        </p>
+                        <p class="commitment-desc">
+                            Nuestra pasión por la excelencia nos impulsa a innovar, sin perder la esencia artesanal que nos distingue.
+                        </p>
+                        <div class="commitment-trust-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>Fabricación artesanal con respaldo y trayectoria desde 1.999</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Título principal de origen -->
-            <h2 class="nosotros-story-title">
-                Veladoras Santa María nació con vocación y devoción
-            </h2>
-
-            <p class="nosotros-story-lead">
-                Iniciamos con una producción artesanal dedicada a abastecer hogares, parroquias y comercios de la región, fundamentada en la calidad de nuestras materias primas, la pureza de la parafina y el respeto por las tradiciones de nuestras familias.
-            </p>
-
-            <!-- Hito de trayectoria -->
-            <div class="nosotros-milestone-bar">
-                <h3>Más de 30 años de trayectoria</h3>
-            </div>
-
-            <p class="nosotros-story-body">
-                Con el paso de los años, la cobertura se extendió a nivel nacional, modernizando los medios de producción e infraestructura con tecnología adecuada para garantizar una llama limpia, mechas de algodón de prolongada duración y una respuesta eficiente a la creciente demanda de distribuidores y mayoristas en todo el país.
-            </p>
-
         </div>
     </section>
 
     <!-- 3. Misión y Visión (Diseño Editorial Clásico y Tradicional) -->
     <section class="nosotros-mv-classic-section">
-        <div class="container-vsm nosotros-narrow-container">
+        <div class="container-vsm">
             <div class="mv-classic-grid">
                 
                 <!-- Columna Misión -->
@@ -103,6 +123,66 @@ global $vsm_img_banner_nosotros, $vsm_img_empresa_grande;
             <p class="nosotros-image-caption">
                 Planta de producción y centro de distribución nacional &bull; Veladoras Santa María
             </p>
+        </div>
+    </section>
+
+    <!-- 5. Preguntas Frecuentes (FAQ) -->
+    <section class="nosotros-faq-section" aria-label="Preguntas Frecuentes">
+        <div class="container-vsm">
+            <div class="nosotros-faq-header">
+                <span class="nosotros-faq-tag">Resolviendo tus dudas</span>
+                <h2 class="nosotros-faq-title">Preguntas Frecuentes</h2>
+                <div class="mv-classic-divider"></div>
+            </div>
+
+            <div class="nosotros-faq-list">
+                <!-- FAQ Item 1 -->
+                <details class="nosotros-faq-item" open>
+                    <summary class="nosotros-faq-question">
+                        <span>¿Qué tipos de velas y veladoras fabrican?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <div class="nosotros-faq-answer">
+                        <p>Fabricamos una amplia variedad de velas y veladoras en diferentes tamaños, colores y presentaciones, ideales para uso decorativo, religioso y espiritual. Nos enfocamos en ofrecer productos duraderos y de excelente calidad.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 2 -->
+                <details class="nosotros-faq-item">
+                    <summary class="nosotros-faq-question">
+                        <span>¿Realizan despachos a otras ciudades fuera de Cúcuta?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <div class="nosotros-faq-answer">
+                        <p>Sí, contamos con capacidad de distribución hacia otras zonas del país. Atendemos pedidos mayoristas y estamos en constante expansión para llegar a nuevos mercados.</p>
+                    </div>
+                </details>
+
+                <!-- FAQ Item 3 -->
+                <details class="nosotros-faq-item">
+                    <summary class="nosotros-faq-question">
+                        <span>¿Ofrecen productos personalizados o por encargo?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </summary>
+                    <div class="nosotros-faq-answer">
+                        <p>Sí, podemos fabricar velas y veladoras con características específicas según las necesidades del cliente, como color, aroma o tamaño, especialmente para eventos o fines comerciales.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- CTA de contacto adicional -->
+            <div class="nosotros-faq-cta">
+                <p>¿Tienes alguna otra consulta sobre nuestros productos o despachos?</p>
+                <a href="https://wa.me/573144753682" class="btn-primary" target="_blank" rel="noopener">
+                    <span>Escríbenos por WhatsApp</span>
+                </a>
+            </div>
         </div>
     </section>
 
