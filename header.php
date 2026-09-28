@@ -56,6 +56,7 @@
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-nav-link <?php echo ( is_front_page() || is_home() ) ? 'active' : ''; ?>">Inicio</a>
                 <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="header-nav-link <?php echo is_page( 'catalogo' ) ? 'active' : ''; ?>">Catálogo</a>
                 <a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>" class="header-nav-link <?php echo is_page( 'nosotros' ) ? 'active' : ''; ?>">Nosotros</a>
+                <a href="<?php echo esc_url( home_url( '/#ubicacion' ) ); ?>" class="header-nav-link">Ubicación</a>
             </nav>
         </div>
 
@@ -124,9 +125,9 @@
         <ul class="drawer-nav-list">
             <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="active">Inicio</a></li>
             <li><a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>">Catálogo de Productos</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>">Nosotros</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/#ubicacion' ) ); ?>">Ubicación</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#lineas-productos' ) ); ?>">Líneas de Productos</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/catalogo/?cat=veladoras' ) ); ?>" class="highlight-link">Promociones y Ofertas</a></li>
-            <li><a href="<?php echo esc_url( home_url( '/nosotros/' ) ); ?>">Conoce Nuestra Historia</a></li>
             <li><a href="<?php echo esc_url( home_url( '/#contacto' ) ); ?>">Contacto & Pedidos</a></li>
         </ul>
     </nav>
