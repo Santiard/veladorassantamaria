@@ -49,6 +49,9 @@ function veladoras_setup() {
         'footer-menu'  => __( 'Menú del Footer', 'veladoras-santa-maria' ),
     ) );
 
+    // Soporte oficial para WooCommerce
+    add_theme_support( 'woocommerce' );
+
     // Marcado HTML5 limpio
     add_theme_support( 'html5', array(
         'search-form',
@@ -63,15 +66,25 @@ function veladoras_setup() {
 add_action( 'after_setup_theme', 'veladoras_setup' );
 
 /**
- * Soporte de plantilla directa para detalle de producto
+ * Enrutamiento automático de plantillas para productos y tienda
  */
 function vsm_product_template_include( $template ) {
-    if ( isset( $_GET['id'] ) && ( isset( $_SERVER['REQUEST_URI'] ) && strpos( $_SERVER['REQUEST_URI'], '/producto' ) !== false ) ) {
+    // 1. Detalle de producto individual
+    if ( is_singular( 'product' ) || ( isset( $_GET['id'] ) && isset( $_SERVER['REQUEST_URI'] ) && strpos( $_SERVER['REQUEST_URI'], '/producto' ) !== false ) ) {
         $custom_template = get_template_directory() . '/page-producto-detalle.php';
         if ( file_exists( $custom_template ) ) {
             return $custom_template;
         }
     }
+
+    // 2. Página de Tienda y Archivos de Taxonomía de Productos
+    if ( ( function_exists( 'is_shop' ) && is_shop() ) || ( function_exists( 'is_product_taxonomy' ) && is_product_taxonomy() ) ) {
+        $catalog_template = get_template_directory() . '/page-catalogo.php';
+        if ( file_exists( $catalog_template ) ) {
+            return $catalog_template;
+        }
+    }
+
     return $template;
 }
-add_filter( 'template_include', 'vsm_product_template_include' );
+add_filter( 'template_include', 'vsm_product_template_include', 99 );

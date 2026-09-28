@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const countTotalEl = document.getElementById('catalogCountTotal');
     const progressBarEl = document.getElementById('catalogProgressBar');
 
-    const BATCH_SIZE = 8;
+    const BATCH_SIZE = 12;
     let visibleLimit = BATCH_SIZE;
     let currentCategory = 'todos';
     let currentSearchTerm = '';
@@ -109,14 +109,32 @@ document.addEventListener('DOMContentLoaded', function () {
         const matchedCards = [];
 
         productCards.forEach(function (card) {
-            const cardCat = (card.getAttribute('data-category') || '').toLowerCase();
+            const cardCatAttr = (card.getAttribute('data-category') || '').toLowerCase();
+            const cardCategories = cardCatAttr.split(/\s+/);
             const cardTitleEl = card.querySelector('.product-card-title');
             const cardCatEl = card.querySelector('.product-card-cat') || card.querySelector('.product-card-category');
             
             const titleText = cardTitleEl ? cardTitleEl.textContent.toLowerCase() : '';
             const catText = cardCatEl ? cardCatEl.textContent.toLowerCase() : '';
 
-            const matchesCategory = (currentCategory === 'todos' || cardCat === currentCategory);
+            // Comprobación de categoría con soporte para múltiples taxonomías y alias
+            let matchesCategory = (currentCategory === 'todos');
+            if (!matchesCategory) {
+                if (cardCategories.includes(currentCategory)) {
+                    matchesCategory = true;
+                } else if (
+                    (currentCategory === 'velas-de-semana-santa' || currentCategory === 'semana-santa') &&
+                    (cardCategories.includes('semana-santa') || cardCategories.includes('velas-de-semana-santa'))
+                ) {
+                    matchesCategory = true;
+                } else if (
+                    (currentCategory === 'velas-navidenas' || currentCategory === 'navidad' || currentCategory === 'velas-navidad') &&
+                    (cardCategories.includes('velas-navidenas') || cardCategories.includes('navidad') || cardCategories.includes('velas-navidad'))
+                ) {
+                    matchesCategory = true;
+                }
+            }
+
             const matchesSearch = !term || titleText.includes(term) || catText.includes(term);
 
             if (matchesCategory && matchesSearch) {
@@ -172,14 +190,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function applyCategoryFilter(category) {
-        currentCategory = category;
+        currentCategory = (category || 'todos').toLowerCase();
+        let foundBtn = false;
         filterButtons.forEach(function (btn) {
-            if (btn.getAttribute('data-filter') === category) {
+            const filterAttr = (btn.getAttribute('data-filter') || '').toLowerCase();
+            const isMatch = (filterAttr === currentCategory) ||
+                ((currentCategory === 'velas-de-semana-santa' || currentCategory === 'semana-santa') && (filterAttr === 'semana-santa' || filterAttr === 'velas-de-semana-santa')) ||
+                ((currentCategory === 'velas-navidenas' || currentCategory === 'navidad') && (filterAttr === 'velas-navidenas' || filterAttr === 'navidad'));
+
+            if (isMatch) {
                 btn.classList.add('active');
+                foundBtn = true;
             } else {
                 btn.classList.remove('active');
             }
         });
+
+        if (!foundBtn) {
+            const allBtn = document.querySelector('.catalog-filter-btn[data-filter="todos"]');
+            if (allBtn) allBtn.classList.add('active');
+        }
+
         updateCatalogDisplay(true);
     }
 

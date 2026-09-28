@@ -80,6 +80,23 @@ global $vsm_img_banner_nosotros, $vsm_img_empresa_grande;
         </div>
     </section>
 
+    <!-- Imagen Estática de Maquinaria y Producción (6.webp) -->
+    <section class="nosotros-big-image-section pt-0" aria-label="Maquinaria y Planta de Fabricación">
+        <div class="container-vsm">
+            <div class="nosotros-big-image-wrapper">
+                <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/6.webp' ) ); ?>" 
+                     alt="Maquinaria y moldeo en planta de producción Veladoras Santa María" 
+                     class="img-empresa-grande" 
+                     width="1200" 
+                     height="520" 
+                     loading="lazy">
+            </div>
+            <p class="nosotros-image-caption">
+                Maquinaria especializada y procesos de moldeo en nuestra planta de producción &bull; Veladoras Santa María
+            </p>
+        </div>
+    </section>
+
     <!-- 3. Misión y Visión (Diseño Editorial Clásico y Tradicional) -->
     <section class="nosotros-mv-classic-section">
         <div class="container-vsm">

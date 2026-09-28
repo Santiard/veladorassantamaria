@@ -48,21 +48,34 @@ $productos = vsm_get_catalog_products();
                 <button type="button" class="catalog-filter-btn active" data-filter="todos">
                     <span>Todos</span>
                 </button>
-                <button type="button" class="catalog-filter-btn" data-filter="velas-decorativas">
-                    <span>Velas Decorativas</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="velones">
-                    <span>Velones</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="veladoras">
-                    <span>Veladoras</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="velas-de-semana-santa">
-                    <span>Velas de Semana Santa</span>
-                </button>
-                <button type="button" class="catalog-filter-btn" data-filter="velas-navidenas">
-                    <span>Velas Navideñas</span>
-                </button>
+                <?php 
+                $cat_list = function_exists( 'vsm_get_catalog_categories' ) ? vsm_get_catalog_categories() : array();
+                if ( ! empty( $cat_list ) ) :
+                    foreach ( $cat_list as $cat_nav ) :
+                ?>
+                    <button type="button" class="catalog-filter-btn" data-filter="<?php echo esc_attr( $cat_nav['slug'] ); ?>">
+                        <span><?php echo esc_html( $cat_nav['name'] ); ?></span>
+                    </button>
+                <?php 
+                    endforeach;
+                else : 
+                ?>
+                    <button type="button" class="catalog-filter-btn" data-filter="velas-decorativas">
+                        <span>Velas Decorativas</span>
+                    </button>
+                    <button type="button" class="catalog-filter-btn" data-filter="velones">
+                        <span>Velones</span>
+                    </button>
+                    <button type="button" class="catalog-filter-btn" data-filter="veladoras">
+                        <span>Veladoras</span>
+                    </button>
+                    <button type="button" class="catalog-filter-btn" data-filter="velas-de-semana-santa">
+                        <span>Velas de Semana Santa</span>
+                    </button>
+                    <button type="button" class="catalog-filter-btn" data-filter="velas-navidenas">
+                        <span>Velas Navideñas</span>
+                    </button>
+                <?php endif; ?>
             </div>
         </nav>
 
@@ -70,9 +83,19 @@ $productos = vsm_get_catalog_products();
         <div class="catalog-grid-wrapper">
             <div class="catalog-products-grid" id="catalogProductsGrid">
                 <?php foreach ( $productos as $item ) : 
-                    $detalle_url = home_url( '/producto/?id=' . $item['id'] );
+                    $detalle_url = ! empty( $item['url'] ) ? $item['url'] : home_url( '/producto/?id=' . $item['id'] );
+                    $is_cotizar  = ! empty( $item['is_consultar'] );
+                    $cat_clases  = ! empty( $item['categorias_clases'] ) ? $item['categorias_clases'] : $item['categoria_slug'];
+
+                    if ( $is_cotizar ) {
+                        $btn_texto   = 'Cotizar';
+                        $wa_msg_text = 'Hola, deseo cotizar el precio y disponibilidad de: ' . $item['nombre'];
+                    } else {
+                        $btn_texto   = 'Pedir';
+                        $wa_msg_text = 'Hola, deseo pedir: ' . $item['nombre'] . ' (' . $item['precio_formato'] . ')';
+                    }
                 ?>
-                    <article class="product-card-minimal" data-category="<?php echo esc_attr( $item['categoria_slug'] ); ?>" id="prod-<?php echo esc_attr( $item['id'] ); ?>">
+                    <article class="product-card-minimal" data-category="<?php echo esc_attr( $cat_clases ); ?>" id="prod-<?php echo esc_attr( $item['id'] ); ?>">
                         
                         <div class="product-img-box">
                             <?php if ( ! empty( $item['etiqueta'] ) ) : ?>
@@ -80,7 +103,7 @@ $productos = vsm_get_catalog_products();
                             <?php endif; ?>
                             
                             <a href="<?php echo esc_url( $detalle_url ); ?>" class="product-img-link" aria-label="<?php echo esc_attr( 'Ver detalles de ' . $item['nombre'] ); ?>">
-                                <img src="<?php echo esc_url( get_theme_file_uri( $item['imagen'] ) ); ?>" 
+                                <img src="<?php echo esc_url( function_exists( 'vsm_get_image_src' ) ? vsm_get_image_src( $item['imagen'] ) : get_theme_file_uri( $item['imagen'] ) ); ?>" 
                                      alt="<?php echo esc_attr( $item['nombre'] ); ?>" 
                                      class="product-thumb-img" 
                                      width="300" 
@@ -111,12 +134,12 @@ $productos = vsm_get_catalog_products();
 
                             <div class="product-card-price-row">
                                 <span class="product-card-price"><?php echo esc_html( $item['precio_formato'] ); ?></span>
-                                <a href="https://wa.me/573144753682?text=<?php echo rawurlencode( 'Hola, deseo cotizar y pedir: ' . $item['nombre'] . ' (' . $item['precio_formato'] . ')' ); ?>" 
+                                <a href="https://wa.me/573144753682?text=<?php echo rawurlencode( $wa_msg_text ); ?>" 
                                    target="_blank" 
                                    rel="noopener" 
                                    class="btn-product-order" 
-                                   aria-label="Pedir <?php echo esc_attr( $item['nombre'] ); ?>">
-                                    <span>Pedir</span>
+                                   aria-label="<?php echo esc_attr( $btn_texto . ' ' . $item['nombre'] ); ?>">
+                                    <span><?php echo esc_html( $btn_texto ); ?></span>
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                         <polyline points="9 18 15 12 9 6"></polyline>
                                     </svg>
@@ -131,7 +154,7 @@ $productos = vsm_get_catalog_products();
             <!-- Controles de Carga Progresiva del Catálogo -->
             <div class="catalog-load-more-wrapper" id="catalogLoadMoreWrapper">
                 <p class="catalog-counter-text">
-                    Mostrando <strong id="catalogCountShown">8</strong> de <strong id="catalogCountTotal"><?php echo count( $productos ); ?></strong> productos
+                    Mostrando <strong id="catalogCountShown">12</strong> de <strong id="catalogCountTotal"><?php echo count( $productos ); ?></strong> productos
                 </p>
                 <div class="catalog-progress-bar-container">
                     <div class="catalog-progress-bar" id="catalogProgressBar" style="width: 66%;"></div>
