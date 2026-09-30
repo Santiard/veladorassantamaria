@@ -38,7 +38,7 @@ $vsm_img_favicon              = 'assets/img/favicon.ico';
 $vsm_img_logo_pequeno         = 'assets/img/logopequeño.webp';
 $vsm_img_logo_grande          = 'assets/img/logogrande.webp';
 $vsm_img_logo                 = 'assets/img/logogrande.webp';
-$vsm_img_hero_banner          = 'assets/img/vela.webp';
+$vsm_img_hero_banner          = 'assets/img/banner2.webp';
 $vsm_img_cintillo_valor       = 'assets/img/icono-fe-artesanal.svg';
 
 // Imagen genérica por defecto para productos
