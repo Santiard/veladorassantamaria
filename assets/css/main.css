@@ -3547,6 +3547,14 @@ strong.location-val {
   cursor: pointer;
 }
 
+.reel-card.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate3d(0, 0, 0) scale(0.5);
+}
+
 /* Botones de Navegación Lateral (Prev / Next) */
 .reel-nav-btn {
   position: absolute;

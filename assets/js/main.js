@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const previousDiffs = reelCards.map(function (card, i) {
             let diff = (i - 0) % reelCards.length;
             if (diff > 2) diff -= reelCards.length;
-            if (diff < -2) diff += reelCards.length;
+            else if (diff < -2) diff += reelCards.length;
             return diff;
         });
 
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
             reelCards.forEach(function (card, i) {
                 let diff = (i - currentReelIndex) % total;
                 if (diff > 2) diff -= total;
-                if (diff < -2) diff += total;
+                else if (diff < -2) diff += total;
 
                 const oldDiff = previousDiffs[i];
                 const isWrap = Math.abs(diff - oldDiff) > 2;
@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     wrappingCards.push(card);
                 }
 
-                card.classList.remove('is-active', 'is-prev', 'is-next', 'is-far-prev', 'is-far-next');
+                card.classList.remove('is-active', 'is-prev', 'is-next', 'is-far-prev', 'is-far-next', 'is-hidden');
 
                 if (diff === 0) {
                     card.classList.add('is-active');
@@ -523,6 +523,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     card.classList.add('is-far-next');
                 } else if (diff === -2) {
                     card.classList.add('is-far-prev');
+                } else {
+                    card.classList.add('is-hidden');
                 }
 
                 previousDiffs[i] = diff;
