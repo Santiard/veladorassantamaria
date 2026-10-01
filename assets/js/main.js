@@ -768,4 +768,22 @@ document.addEventListener('DOMContentLoaded', function () {
             whatsappOrderBtn.href = 'https://wa.me/573144753682?text=' + waMsgOrder;
         }
     }
+
+    // Carga diferida inteligente de Google Maps (ahorra 405KB de JS en móvil inicial)
+    const mapIframe = document.getElementById('locationIframeMap');
+    if (mapIframe && mapIframe.dataset && mapIframe.dataset.src) {
+        if ('IntersectionObserver' in window) {
+            const mapObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        mapIframe.src = mapIframe.dataset.src;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '400px 0px' });
+            mapObserver.observe(mapIframe);
+        } else {
+            mapIframe.src = mapIframe.dataset.src;
+        }
+    }
 });

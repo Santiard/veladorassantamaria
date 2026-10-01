@@ -137,12 +137,15 @@
     <section class="hero-banner-section" aria-label="Banner Principal">
         <div class="hero-banner-container">
             <a href="preview-catalogo.html" class="hero-banner-link" aria-label="Catálogo Veladoras Santa María">
-                <img src="assets/img/banner2.webp" 
-                     alt="Velas y Velones Santa María Plus S.A.S. - Ilumina tus momentos especiales" 
-                     class="hero-banner-img" 
-                     width="1920" 
-                     height="480" 
-                     fetchpriority="high">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/img/banner2-mobile.webp">
+                    <img src="assets/img/banner2.webp" 
+                         alt="Velas y Velones Santa María Plus S.A.S. - Ilumina tus momentos especiales" 
+                         class="hero-banner-img" 
+                         width="1920" 
+                         height="480" 
+                         fetchpriority="high">
+                </picture>
             </a>
 
             <!-- Atajo Rápido a Ubicación y Sedes -->
@@ -461,7 +464,8 @@
                 <div class="location-map-col">
                     <iframe 
                         id="locationIframeMap"
-                        src="https://maps.google.com/maps?q=Velas+y+Velones+Santa+Maria+Plus+SAS,+Av.+11+%2314-45,+C%C3%BAcuta&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                        data-src="https://maps.google.com/maps?q=Velas+y+Velones+Santa+Maria+Plus+SAS,+Av.+11+%2314-45,+C%C3%BAcuta&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                        src="about:blank"
                         class="location-iframe-map" 
                         allowfullscreen="" 
                         loading="lazy" 

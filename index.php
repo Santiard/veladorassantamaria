@@ -23,12 +23,15 @@ global $vsm_img_hero_banner,
     <section class="hero-banner-section" aria-label="Banner Principal">
         <div class="hero-banner-container">
             <a href="<?php echo esc_url( home_url( '/catalogo/' ) ); ?>" class="hero-banner-link" aria-label="Catálogo Veladoras Santa María">
-                <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/banner2.webp' ) ); ?>" 
-                     alt="Velas y Velones Santa María Plus S.A.S. - Ilumina tus momentos especiales" 
-                     class="hero-banner-img" 
-                     width="1920" 
-                     height="480" 
-                     fetchpriority="high">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="<?php echo esc_url( get_theme_file_uri( 'assets/img/banner2-mobile.webp' ) ); ?>">
+                    <img src="<?php echo esc_url( get_theme_file_uri( 'assets/img/banner2.webp' ) ); ?>" 
+                         alt="Velas y Velones Santa María Plus S.A.S. - Ilumina tus momentos especiales" 
+                         class="hero-banner-img" 
+                         width="1920" 
+                         height="480" 
+                         fetchpriority="high">
+                </picture>
             </a>
 
             <!-- Atajo Rápido a Ubicación y Sedes -->
@@ -321,7 +324,8 @@ global $vsm_img_hero_banner,
                 <div class="location-map-col">
                     <iframe 
                         id="locationIframeMap"
-                        src="https://maps.google.com/maps?q=Velas+y+Velones+Santa+Maria+Plus+SAS,+Av.+11+%2314-45,+C%C3%BAcuta&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                        data-src="https://maps.google.com/maps?q=Velas+y+Velones+Santa+Maria+Plus+SAS,+Av.+11+%2314-45,+C%C3%BAcuta&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                        src="about:blank"
                         class="location-iframe-map" 
                         allowfullscreen="" 
                         loading="lazy" 

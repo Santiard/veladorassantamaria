@@ -66,22 +66,71 @@ function veladoras_setup() {
 add_action( 'after_setup_theme', 'veladoras_setup' );
 
 /**
- * Enrutamiento automático de plantillas para productos y tienda
+ * Reglas de reescritura de URL para Catálogo y Nosotros
+ */
+function vsm_custom_rewrite_rules() {
+    add_rewrite_rule( '^catalogo/?$', 'index.php?vsm_route=catalogo', 'top' );
+    add_rewrite_rule( '^nosotros/?$', 'index.php?vsm_route=nosotros', 'top' );
+}
+add_action( 'init', 'vsm_custom_rewrite_rules' );
+
+function vsm_custom_query_vars( $vars ) {
+    $vars[] = 'vsm_route';
+    return $vars;
+}
+add_filter( 'query_vars', 'vsm_custom_query_vars' );
+
+/**
+ * Enrutamiento automático de plantillas para productos, catálogo, tienda y nosotros
  */
 function vsm_product_template_include( $template ) {
+    global $wp_query;
+
+    $request_uri = isset( $_SERVER['REQUEST_URI'] ) ? trim( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' ) : '';
+    $route_var   = get_query_var( 'vsm_route' );
+
     // 1. Detalle de producto individual
-    if ( is_singular( 'product' ) || ( isset( $_GET['id'] ) && isset( $_SERVER['REQUEST_URI'] ) && strpos( $_SERVER['REQUEST_URI'], '/producto' ) !== false ) ) {
+    if ( is_singular( 'product' ) || ( isset( $_GET['id'] ) && strpos( $request_uri, 'producto' ) !== false ) ) {
         $custom_template = get_template_directory() . '/page-producto-detalle.php';
         if ( file_exists( $custom_template ) ) {
+            if ( is_object( $wp_query ) ) {
+                $wp_query->is_404 = false;
+            }
+            status_header( 200 );
             return $custom_template;
         }
     }
 
-    // 2. Página de Tienda y Archivos de Taxonomía de Productos
-    if ( ( function_exists( 'is_shop' ) && is_shop() ) || ( function_exists( 'is_product_taxonomy' ) && is_product_taxonomy() ) ) {
+    // 2. Página de Catálogo / Tienda y Archivos de Taxonomía de Productos
+    if ( ( function_exists( 'is_shop' ) && is_shop() ) 
+         || ( function_exists( 'is_product_taxonomy' ) && is_product_taxonomy() )
+         || $route_var === 'catalogo'
+         || $request_uri === 'catalogo' 
+         || $request_uri === 'tienda'
+         || strpos( $request_uri, 'catalogo' ) === 0 ) {
         $catalog_template = get_template_directory() . '/page-catalogo.php';
         if ( file_exists( $catalog_template ) ) {
+            if ( is_object( $wp_query ) ) {
+                $wp_query->is_404 = false;
+            }
+            status_header( 200 );
             return $catalog_template;
+        }
+    }
+
+    // 3. Página de Nosotros
+    if ( $route_var === 'nosotros' 
+         || $request_uri === 'nosotros' 
+         || strpos( $request_uri, 'nosotros' ) === 0 
+         || strpos( $request_uri, 'quienes-somos' ) === 0 
+         || strpos( $request_uri, 'sobre-nosotros' ) === 0 ) {
+        $nosotros_template = get_template_directory() . '/page-nosotros.php';
+        if ( file_exists( $nosotros_template ) ) {
+            if ( is_object( $wp_query ) ) {
+                $wp_query->is_404 = false;
+            }
+            status_header( 200 );
+            return $nosotros_template;
         }
     }
 

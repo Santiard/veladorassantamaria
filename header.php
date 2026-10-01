@@ -12,6 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <?php if ( is_front_page() || is_home() ) : ?>
+    <link rel="preload" as="image" href="<?php echo esc_url( get_theme_file_uri( 'assets/img/banner2-mobile.webp' ) ); ?>" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="<?php echo esc_url( get_theme_file_uri( 'assets/img/banner2.webp' ) ); ?>" media="(min-width: 769px)" fetchpriority="high">
+    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
