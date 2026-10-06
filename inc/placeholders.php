@@ -221,12 +221,34 @@ function vsm_get_catalog_products() {
                 $is_cotizar = ( $precio_num <= 0 );
                 $precio_fmt = ( ! $is_cotizar ) ? '$ ' . number_format( $precio_num, 0, ',', '.' ) : 'Consultar precio';
 
-                // Imagen destacada con fallback a galería o placeholder de veladoras
+                // Imagen destacada sin recorte destructivo (el contenedor 1:1 en CSS con object-fit: contain ajusta el producto completo)
                 $thumb_url = get_the_post_thumbnail_url( $pid, 'medium_large' );
+                if ( ! $thumb_url ) {
+                    $thumb_url = get_the_post_thumbnail_url( $pid, 'woocommerce_single' );
+                }
+                if ( ! $thumb_url ) {
+                    $thumb_url = get_the_post_thumbnail_url( $pid, 'large' );
+                }
+                if ( ! $thumb_url ) {
+                    $thumb_url = get_the_post_thumbnail_url( $pid, 'full' );
+                }
+                if ( ! $thumb_url ) {
+                    $thumb_url = get_the_post_thumbnail_url( $pid, 'woocommerce_thumbnail' );
+                }
+
                 if ( ! $thumb_url && $wc_prod && method_exists( $wc_prod, 'get_gallery_image_ids' ) ) {
                     $gallery = $wc_prod->get_gallery_image_ids();
                     if ( ! empty( $gallery ) ) {
                         $thumb_url = wp_get_attachment_image_url( $gallery[0], 'medium_large' );
+                        if ( ! $thumb_url ) {
+                            $thumb_url = wp_get_attachment_image_url( $gallery[0], 'woocommerce_single' );
+                        }
+                        if ( ! $thumb_url ) {
+                            $thumb_url = wp_get_attachment_image_url( $gallery[0], 'large' );
+                        }
+                        if ( ! $thumb_url ) {
+                            $thumb_url = wp_get_attachment_image_url( $gallery[0], 'full' );
+                        }
                     }
                 }
                 if ( ! $thumb_url ) {
@@ -477,15 +499,113 @@ function vsm_get_product_by_id( $id ) {
             $is_cotizar = ( $precio_num <= 0 );
             $precio_fmt = ( ! $is_cotizar ) ? '$ ' . number_format( $precio_num, 0, ',', '.' ) : 'Consultar precio';
 
-            $thumb_url = get_the_post_thumbnail_url( $id, 'large' );
-            if ( ! $thumb_url && $wc_prod && method_exists( $wc_prod, 'get_gallery_image_ids' ) ) {
-                $gallery = $wc_prod->get_gallery_image_ids();
-                if ( ! empty( $gallery ) ) {
-                    $thumb_url = wp_get_attachment_image_url( $gallery[0], 'large' );
+            // Obtener todas las imágenes del producto (Principal + Galería de WooCommerce + Adjuntos)
+            $galeria             = array();
+            $image_ids_processed = array();
+
+            // 1. Imagen principal destacada
+            $featured_id = function_exists( 'get_post_thumbnail_id' ) ? get_post_thumbnail_id( $id ) : 0;
+            if ( $featured_id ) {
+                $image_ids_processed[] = intval( $featured_id );
+                $main_single = wp_get_attachment_image_url( $featured_id, 'woocommerce_single' );
+                if ( ! $main_single ) $main_single = wp_get_attachment_image_url( $featured_id, 'large' );
+                if ( ! $main_single ) $main_single = wp_get_attachment_image_url( $featured_id, 'full' );
+
+                $main_thumb = wp_get_attachment_image_url( $featured_id, 'woocommerce_thumbnail' );
+                if ( ! $main_thumb ) $main_thumb = wp_get_attachment_image_url( $featured_id, 'thumbnail' );
+                if ( ! $main_thumb ) $main_thumb = $main_single;
+
+                if ( $main_single ) {
+                    $galeria[] = array(
+                        'id'    => $featured_id,
+                        'full'  => $main_single,
+                        'thumb' => $main_thumb,
+                    );
+                }
+            } else {
+                $main_single = get_the_post_thumbnail_url( $id, 'woocommerce_single' );
+                if ( ! $main_single ) $main_single = get_the_post_thumbnail_url( $id, 'large' );
+                if ( ! $main_single ) $main_single = get_the_post_thumbnail_url( $id, 'full' );
+                if ( $main_single ) {
+                    $galeria[] = array(
+                        'id'    => 0,
+                        'full'  => $main_single,
+                        'thumb' => $main_single,
+                    );
                 }
             }
-            if ( ! $thumb_url ) {
+
+            // 2. Galería oficial de WooCommerce
+            $gallery_ids = array();
+            if ( $wc_prod && method_exists( $wc_prod, 'get_gallery_image_ids' ) ) {
+                $wc_gallery = $wc_prod->get_gallery_image_ids();
+                if ( ! empty( $wc_gallery ) ) {
+                    $gallery_ids = array_merge( $gallery_ids, $wc_gallery );
+                }
+            }
+
+            // 3. Postmeta '_product_image_gallery'
+            $raw_gallery_meta = get_post_meta( $id, '_product_image_gallery', true );
+            if ( ! empty( $raw_gallery_meta ) ) {
+                $meta_ids = array_map( 'intval', explode( ',', $raw_gallery_meta ) );
+                $gallery_ids = array_merge( $gallery_ids, $meta_ids );
+            }
+
+            // 4. Adjuntos de medios asociados al producto (post_parent = $id)
+            if ( function_exists( 'get_attached_media' ) ) {
+                $attachments = get_attached_media( 'image', $id );
+                if ( ! empty( $attachments ) ) {
+                    foreach ( $attachments as $att_obj ) {
+                        $gallery_ids[] = $att_obj->ID;
+                    }
+                }
+            } elseif ( function_exists( 'get_posts' ) ) {
+                $att_posts = get_posts( array(
+                    'post_parent'    => $id,
+                    'post_type'      => 'attachment',
+                    'post_mime_type' => 'image',
+                    'posts_per_page' => -1,
+                    'fields'         => 'ids',
+                ) );
+                if ( ! empty( $att_posts ) ) {
+                    $gallery_ids = array_merge( $gallery_ids, $att_posts );
+                }
+            }
+
+            $gallery_ids = array_values( array_unique( array_map( 'intval', $gallery_ids ) ) );
+
+            // Añadir cada imagen secundaria sin duplicados
+            foreach ( $gallery_ids as $gid ) {
+                if ( $gid <= 0 || in_array( $gid, $image_ids_processed, true ) ) {
+                    continue;
+                }
+                $g_full = wp_get_attachment_image_url( $gid, 'woocommerce_single' );
+                if ( ! $g_full ) $g_full = wp_get_attachment_image_url( $gid, 'large' );
+                if ( ! $g_full ) $g_full = wp_get_attachment_image_url( $gid, 'full' );
+
+                $g_thumb = wp_get_attachment_image_url( $gid, 'woocommerce_thumbnail' );
+                if ( ! $g_thumb ) $g_thumb = wp_get_attachment_image_url( $gid, 'thumbnail' );
+                if ( ! $g_thumb ) $g_thumb = $g_full;
+
+                if ( $g_full ) {
+                    $image_ids_processed[] = $gid;
+                    $galeria[] = array(
+                        'id'    => $gid,
+                        'full'  => $g_full,
+                        'thumb' => $g_thumb,
+                    );
+                }
+            }
+
+            if ( ! empty( $galeria ) ) {
+                $thumb_url = $galeria[0]['full'];
+            } else {
                 $thumb_url = 'assets/img/veladoras.webp';
+                $galeria[] = array(
+                    'id'    => 0,
+                    'full'  => $thumb_url,
+                    'thumb' => $thumb_url,
+                );
             }
 
             $sku = $wc_prod ? $wc_prod->get_sku() : '';
@@ -519,6 +639,7 @@ function vsm_get_product_by_id( $id ) {
                 'precio_formato'    => $precio_fmt,
                 'is_consultar'      => $is_cotizar,
                 'imagen'            => $thumb_url,
+                'galeria'           => $galeria,
                 'etiqueta'          => ( ! $is_cotizar ) ? 'Precio por unidad' : 'Venta mayorista y detal',
                 'sku'               => $sku,
                 'descripcion'       => $desc,
@@ -531,6 +652,13 @@ function vsm_get_product_by_id( $id ) {
     $productos = vsm_get_catalog_products();
     foreach ( $productos as $p ) {
         if ( intval( $p['id'] ) === $id ) {
+            if ( empty( $p['galeria'] ) ) {
+                $p['galeria'] = array(
+                    array( 'full' => $p['imagen'], 'thumb' => $p['imagen'] ),
+                    array( 'full' => 'assets/img/vela.webp', 'thumb' => 'assets/img/vela.webp' ),
+                    array( 'full' => 'assets/img/velas-dcorativas.webp', 'thumb' => 'assets/img/velas-dcorativas.webp' ),
+                );
+            }
             return $p;
         }
     }

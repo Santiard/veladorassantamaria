@@ -771,6 +771,43 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // =========================================================================
+    // GALERÍA INTERACTIVA DE IMÁGENES SECUNDARIAS (DETALLE DE PRODUCTO)
+    // =========================================================================
+    const galleryThumbBtns = document.querySelectorAll('.gallery-thumb-btn');
+    const mainDetailImg = document.getElementById('prodDetailMainImg');
+
+    if (galleryThumbBtns.length > 0 && mainDetailImg) {
+        function switchMainImage(btn) {
+            const targetSrc = btn.getAttribute('data-full-img');
+            if (!targetSrc) return;
+
+            mainDetailImg.style.opacity = '0.35';
+
+            setTimeout(function () {
+                mainDetailImg.src = targetSrc;
+                mainDetailImg.style.opacity = '1';
+            }, 120);
+
+            galleryThumbBtns.forEach(function (otherBtn) {
+                otherBtn.classList.remove('is-active');
+                otherBtn.setAttribute('aria-pressed', 'false');
+            });
+            btn.classList.add('is-active');
+            btn.setAttribute('aria-pressed', 'true');
+        }
+
+        galleryThumbBtns.forEach(function (btn) {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                switchMainImage(this);
+            });
+            btn.addEventListener('mouseenter', function () {
+                switchMainImage(this);
+            });
+        });
+    }
+
     // Carga diferida inteligente de Google Maps (ahorra 405KB de JS en móvil inicial)
     const mapIframe = document.getElementById('locationIframeMap');
     if (mapIframe && mapIframe.dataset && mapIframe.dataset.src) {

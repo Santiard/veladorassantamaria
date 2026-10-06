@@ -2217,15 +2217,29 @@ button {
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
+  border-radius: var(--radius-sm);
   margin-bottom: 1rem;
   overflow: hidden;
 }
 
+.product-img-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.55rem;
+  text-decoration: none;
+}
+
 .product-thumb-img {
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  object-position: center;
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .product-card-minimal:hover .product-thumb-img {
@@ -3760,10 +3774,12 @@ strong.location-val {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: #fafbfc;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   overflow: hidden;
   margin-bottom: 1.5rem;
+  padding: 1.25rem;
 }
 
 .product-detail-badge {
@@ -3783,14 +3799,78 @@ strong.location-val {
 }
 
 .product-detail-main-img {
-  max-width: 90%;
-  max-height: 90%;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  transition: transform 0.4s ease;
+  object-position: center;
+  transition: opacity 0.25s ease, transform 0.4s ease;
 }
 
 .product-detail-img-container:hover .product-detail-main-img {
   transform: scale(1.05);
+}
+
+/* Tira de Miniaturas Secundarias (Galería de Producto) */
+.product-detail-gallery-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+  margin-top: 0.85rem;
+  margin-bottom: 1.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(1, 22, 137, 0.25) transparent;
+}
+
+.product-detail-gallery-strip::-webkit-scrollbar {
+  height: 5px;
+}
+
+.product-detail-gallery-strip::-webkit-scrollbar-thumb {
+  background: rgba(1, 22, 137, 0.25);
+  border-radius: 4px;
+}
+
+.gallery-thumb-btn {
+  flex: 0 0 74px;
+  width: 74px;
+  height: 74px;
+  aspect-ratio: 1 / 1;
+  padding: 0.35rem;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  background-color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.gallery-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+}
+
+.gallery-thumb-btn:hover {
+  border-color: var(--color-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(1, 22, 137, 0.08);
+}
+
+.gallery-thumb-btn.is-active {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 2px rgba(1, 22, 137, 0.2);
+  outline: none;
 }
 
 /* Columna Derecha: Información y Compra */

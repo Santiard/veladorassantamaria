@@ -15,13 +15,13 @@ require_once get_template_directory() . '/inc/placeholders.php';
  */
 function veladoras_scripts() {
     // Estilos identificadores de WordPress
-    wp_enqueue_style( 'veladoras-style', get_stylesheet_uri(), array(), '1.0.0' );
+    wp_enqueue_style( 'veladoras-style', get_stylesheet_uri(), array(), '1.0.3' );
 
     // Estilos principales de diseño y tokens de color
-    wp_enqueue_style( 'veladoras-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.0' );
+    wp_enqueue_style( 'veladoras-main', get_template_directory_uri() . '/assets/css/main.css', array(), '1.0.3' );
 
     // Script principal para interacciones y menú móvil
-    wp_enqueue_script( 'veladoras-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'veladoras-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.3', true );
 }
 add_action( 'wp_enqueue_scripts', 'veladoras_scripts' );
 
@@ -49,8 +49,15 @@ function veladoras_setup() {
         'footer-menu'  => __( 'Menú del Footer', 'veladoras-santa-maria' ),
     ) );
 
-    // Soporte oficial para WooCommerce
-    add_theme_support( 'woocommerce' );
+    // Soporte oficial para WooCommerce con formato cuadrado 1:1
+    add_theme_support( 'woocommerce', array(
+        'thumbnail_image_width'         => 600,
+        'single_image_width'            => 800,
+        'gallery_thumbnail_image_width' => 150,
+    ) );
+
+    // Tamaño proporcional optimizado para productos (sin recorte destructivo)
+    add_image_size( 'vsm-product-medium', 600, 600, false );
 
     // Marcado HTML5 limpio
     add_theme_support( 'html5', array(
@@ -64,6 +71,20 @@ function veladoras_setup() {
     ) );
 }
 add_action( 'after_setup_theme', 'veladoras_setup' );
+
+/**
+ * Configurar miniaturas de productos en WooCommerce sin recorte destructivo.
+ * Conserva la imagen íntegra para que el contenedor cuadrado 1:1 en CSS
+ * con object-fit: contain muestre la totalidad del producto (mecha y base) sin cortes.
+ */
+function vsm_woocommerce_thumbnail_cropping( $size ) {
+    return array(
+        'width'  => 600,
+        'height' => 600,
+        'crop'   => 0, // 0 = sin recorte destructivo
+    );
+}
+add_filter( 'woocommerce_get_image_size_thumbnail', 'vsm_woocommerce_thumbnail_cropping' );
 
 /**
  * Reglas de reescritura de URL para Catálogo y Nosotros

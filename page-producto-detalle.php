@@ -11,6 +11,8 @@ if ( isset( $_GET['id'] ) && intval( $_GET['id'] ) > 0 ) {
     $prod_id = intval( $_GET['id'] );
 } elseif ( function_exists( 'get_the_ID' ) && get_the_ID() ) {
     $prod_id = get_the_ID();
+} elseif ( function_exists( 'get_queried_object_id' ) && get_queried_object_id() ) {
+    $prod_id = get_queried_object_id();
 } else {
     $prod_id = 1;
 }
@@ -66,10 +68,32 @@ if ( $is_cotizar ) {
                     <?php endif; ?>
                     <img src="<?php echo esc_url( function_exists( 'vsm_get_image_src' ) ? vsm_get_image_src( $producto['imagen'] ) : get_theme_file_uri( $producto['imagen'] ) ); ?>" 
                          alt="<?php echo esc_attr( $producto['nombre'] ); ?>" 
+                         id="prodDetailMainImg" 
                          class="product-detail-main-img" 
                          width="480" 
                          height="480">
                 </div>
+
+                <!-- Tira de Miniaturas Secundarias (Galería) -->
+                <?php if ( ! empty( $producto['galeria'] ) && count( $producto['galeria'] ) > 1 ) : ?>
+                    <div class="product-detail-gallery-strip" aria-label="Galería de fotos del producto">
+                        <?php foreach ( $producto['galeria'] as $idx => $g_img ) : 
+                            $is_active = ( $idx === 0 );
+                        ?>
+                            <button type="button" 
+                                    class="gallery-thumb-btn<?php echo $is_active ? ' is-active' : ''; ?>" 
+                                    data-full-img="<?php echo esc_url( function_exists( 'vsm_get_image_src' ) ? vsm_get_image_src( $g_img['full'] ) : get_theme_file_uri( $g_img['full'] ) ); ?>"
+                                    aria-label="<?php echo esc_attr( 'Ver imagen ' . ( $idx + 1 ) . ' de ' . $producto['nombre'] ); ?>"
+                                    aria-pressed="<?php echo $is_active ? 'true' : 'false'; ?>">
+                                <img src="<?php echo esc_url( function_exists( 'vsm_get_image_src' ) ? vsm_get_image_src( $g_img['thumb'] ) : get_theme_file_uri( $g_img['thumb'] ) ); ?>" 
+                                     alt="<?php echo esc_attr( $producto['nombre'] . ' - Vista ' . ( $idx + 1 ) ); ?>" 
+                                     width="72" 
+                                     height="72" 
+                                     loading="lazy">
+                            </button>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- Columna Derecha: Información Técnica y Botones de Pedido -->
